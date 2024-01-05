@@ -1,0 +1,76 @@
+## User Configuration
+
+Depending on how your team has installed and configured Posit Team, there might be no user configurations needed and you can start developing, installing packages, and publishing immediately!
+
+However, every user should be aware of which configurations are needed to make Posit Team run like well oiled machine! As show in figure @fig-pst-overview, users should know how to configure Posit Workbench to use packages from Posit Package Manager and how to configure a Posit Connect instance for publishing.
+
+### Configuring your R environment to use Posit Package Manager
+
+Before making any configurations, you should first check which repositories you're currently using. Within an active R session, you can use the `options` function to explore which repositories ("repos") your currently using.
+
+``` r
+options("repos")
+$repos
+                                         CRAN 
+"https://packagemanager.posit.co/cran/latest"
+```
+
+In this example, you can see the output is showing [Posit's Public Package Manager](https://packagemanager.posit.co/client/#/) as the default repository for R packages. Specifically, we are pointing to a [CRAN](https://cran.r-project.org/) repository hosted within package manager.
+
+To configure R to use Posit Package Manager as it's CRAN repository, set the `repos` option to use the repository URL. The [repository URL](https://docs.posit.co/rspm/user/get-repo-url/) can be found within the **SETUP** page within Posit Package Manager.
+
+``` r
+options(repos = c(CRAN = "https://packagemanager.posit.co/cran/__linux__/centos7/latest"))
+```
+
+Since this configuration is done within an active R session, you'll need to repeat these steps anytime you open a new session. Consider adding this code to your `.Rprofile` file to maintain the repository configuration across R sessions.
+
+You can also set the repository URL using the RStudio IDE by navigating to **Tools –\> Global Options –\> Packages**, and adding the repository URL to the "Primary CRAN repository" text box.
+
+![RStudio Global Options - Packages](images/packages-setting.png){#fig-globaloptions-packages fig-align="center" width="385"}
+
+### Configuring your Python environment to use Posit Package Manager
+
+Pip is commonly used to install and manage the Python packages in your environment. To see which repositories pip is currently pointing to, we can run `pip config list` from the command line/terminal:
+
+``` bash
+pip config list
+global.index-url='https://packagemanager.posit.co/pypi/latest/simple'
+```
+
+The `global.index-url` let's us know which repository pip will used for python package installation. In this case, it's a mirror of the [Python Package Index](https://pypi.org/) (PyPI) within Posit Package Manager.
+
+You can modify the `global.index-url` setting for all python projects by running:
+
+``` bash
+pip config set global.index-url https://packagemanager.posit.co/pypi/latest/simple
+```
+
+## Configure a Posit Connect instance for publishing
+
+Publishing your data products to Posit Connect is arguably the most valuable feature of Posit Team. Configuring a Posit Connect instance will vary depending on your development environment and publishing method (see @fig-publishing-methods). For this workshop, we will cover push-button deployment via the RStudio IDE and CLI publishing. Additional details for configuring a Posit Connect instance can be found on the [Posit Connect User Guide](https://docs.posit.co/connect/user/publishing-rstudio/).
+
+### Push Button Deployment (RStudio)
+
+Navigate to **Tools –\> Global Options –\> Publishing.** In some cases, the Posit Connect will already be configured for you. To add a new Posit Connect instance, click the **Connect** button and follow the instructions. The only thing needed is the Posit Connect URL which can be supplied by your System Administrator.
+
+![RStudio - Configure Posit Connect Instance - Step1](images/rstudio-connect1.png){#rstudio-connect1 fig-align="center" width="940"}
+
+![RStudio - Configure Posit Connect Instance - Step 2](images/rstudio-connect2.png){#rstudio-connect2 fig-align="center" width="591"}
+
+## CLI Publishing
+
+To check currenctly connected Posit Connect servers, you can use the `rsconnect-python` CLI tool and run the following command from the terminal/command line:
+
+``` bash
+rsconnect add list 
+```
+
+To add a new Posit Connect instance, you'll need the Posit Connect server URL as well as an API key (instructions for adding an API can be found [here](https://docs.posit.co/connect/user/api-keys/)). You also need to give your Posit Connect instance a name.
+
+``` bash
+rsconnect add \
+    --server https://my.connect.server/ \
+    --name myServer \
+    --api-key myconnectapikey
+```

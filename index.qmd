@@ -1,0 +1,87 @@
+# Welcome to Posit Team User Training! {.unnumbered}
+
+This book is a companion to the live Posit Team User training workshop hosted by Posit.
+
+Posit Team is a bundled offering of Posit's three professional data science tools: Posit Workbench, Posit Connect, and Posit Workbench. **For this book, we consider Posit Team users to be data scientists that are writing code and developing data products (e.g., Shiny applications and Quarto documents)**. For Posit Team administrators, we'd suggest checking out our [Administrator Training](https://solutions.posit.co/admin-training/).
+
+## Workshop Goal {.unnumbered}
+
+::: callout-note
+## Workshop Goal
+
+Provide every participant with a **foundational knowledge** of Posit Team through interactive (real) data science workflows.
+:::
+
+What is considered *foundational knowledge*? For this workshop, foundational knowledge is the *minimum* Posit Team feature set and/or workflows that every user should be aware of, including:
+
+**Posit Workbench**
+
+-   Integrated Development Environment (IDE) Options
+
+-   Data Access
+
+-   Job Launcher
+
+**Posit Connect**
+
+-   Publishing Methods
+
+-   Content Sharing and Access Control
+
+-   Job Scheduling
+
+-   Supported Content Types
+
+-   Runtime Settings
+
+**Posit Package Manager**
+
+-   R/Python Package Access
+
+## Agenda {.unnumbered}
+
+This workshop will loosely follow the model of a typical data science project as described in [R for Data Science](https://r4ds.hadley.nz/):
+
+![Data science project model](images/data-science-model.png){#data-science-model fig-align="center"}
+
+We'll begin with some workshop logistics and an overview of Posit Team. The remainder of the workshop will follow the above *Data* (focus on *Import*), *Understand*, and *Communicate* data science model. A full agenda is listed below:
+
+-   Overview and Setup
+
+    -   Accessing the workshop environment
+
+    -   Posit Team overview
+
+    -   User configuration
+
+-   Data
+
+    -   Methods for reading data into Posit Team
+
+    -   Posit Professional ODBC Drivers
+
+    -   **Exercise:** Extract-Transform-Load (ETL) workflow
+
+-   Understand
+
+    -   Creating a simple model
+
+    -   Saving and serving a model
+
+    -   **Exercise:** Create, save, and serve a model using `pins`, `vetiver`, and FastAPI
+
+-   Communicate
+
+    -   Shiny
+
+    -   **Exercise:** Publish a Shiny for Python application to Posit Connect
+
+    -   **Exercise:** Publish a Shiny for R application to Posit Connect using Git-backed deployment to Posit Connect
+
+-   Bonus Content
+
+    -   Connect API
+
+    -   `connectwidgets`
+
+    -   Job Launcher in Posit Workbench

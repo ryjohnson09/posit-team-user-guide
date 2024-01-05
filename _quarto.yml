@@ -1,0 +1,36 @@
+project:
+  type: book
+
+book:
+  sidebar: 
+    logo: images/logo-team-full-color.svg
+  chapters:
+    - index.qmd
+    
+    - part: Overview and Setup
+      chapters: 
+        - workshop-access.qmd
+        - posit-team-overview.qmd
+        - user-configuration.qmd
+    - part: Data
+      chapters: 
+        - data.qmd
+        - exercise-ETL.qmd
+    - part: Communicate
+      chapters: 
+        - shiny.qmd
+        - exercise-shiny-py.qmd
+        - exercise-shiny-r.qmd
+    - part: Bonus Content
+      chapters: 
+        - bonus-content.qmd
+
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
