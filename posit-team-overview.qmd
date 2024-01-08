@@ -45,4 +45,3 @@ Users have multiple options for publishing content to Posit Connect, summarized 
 ### Posit Package Manager
 
 Data scientists leverage Posit Package Manager to access R and Python packages from repositories managed and hosted from within your organization. Often, Posit Package Manager is considered a "behind the scenes" tool, but it's importance should not be underestimated. Users of Posit Package Manager often find that their package installs and development environments "just work" without any prior configuration. However, it's still important that users know *how* to install packages from an instance of Posit Package Manager.
-

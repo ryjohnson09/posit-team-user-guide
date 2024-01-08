@@ -16,6 +16,10 @@ book:
       chapters: 
         - data.qmd
         - exercise-ETL.qmd
+    - part: Understand
+      chapters: 
+        - modeling.qmd
+        - exercise-model.qmd
     - part: Communicate
       chapters: 
         - shiny.qmd

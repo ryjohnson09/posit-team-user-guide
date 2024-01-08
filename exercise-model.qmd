@@ -1,0 +1,11 @@
+# Exercise: Modelling 
+
+Now that we have a polished dataset pinned to Posit Connect, it's time to *understand* what the data is telling us. Furthermore, we can use the data to train a model to help predict future events. However, **this workshop is not a modeling workshop!** The model we will create in this exercise is a proof-of-concept and will not be particularly informative.
+
+## Create a Model
+
+The COVID dataset contains a column (`new_cases`) that shows how many new cases of COVID were reported on a specific day. There is seasonality for certain infections (e.g., influenza and RSV), and we can use this COVID dataset to determine if the same applies to COVID. In other words:
+
+> Can we predict new cases of COVID given a specific day of the year?
+
+To highlight the cross-language functionality of Posit Team, we will create this model using Python! There are so many amazing packages and modules available in Python for creating models including Tensorflow, Kersa, and SciKit-Learn. For this workshop we are going to create a simple linear regression model using SciKit-Learn.
