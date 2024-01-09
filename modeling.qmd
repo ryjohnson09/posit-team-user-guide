@@ -27,7 +27,14 @@ Given the iterative nature of the ML life cycle, there exists tools explicitly d
 
 ### `vetiver` workflow with Posit Team
 
-A typical `vetiver` workflow within Posit Team consists of converting a model to a *vetiver model*, saving it to Posit Connect as a `pin`, and then serving it as an API. This workflow is shown below in both Python and R. Be sure to substitute "your_name" with your Posit Connect username:
+```{mermaid}
+flowchart LR
+  A(Convert model to\nvetiver model) --> B(Pin vetiver model\nto Posit Connect)
+  B --> C(Serve vetiver model\nas an API)
+  C --> D(Make a prediction!)
+```
+
+A typical `vetiver` workflow within Posit Team, depicted in the flow diagram above, consists of converting a model to a *vetiver model*, saving it to Posit Connect as a `pin`, and then serving it as an API. This workflow is shown below in both Python and R. Be sure to substitute "your_name" with your Posit Connect username:
 
 ::: {.panel-tabset group="language"}
 ## Python

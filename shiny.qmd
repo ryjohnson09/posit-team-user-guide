@@ -1,1 +1,91 @@
 # Shiny
+
+::: columns
+::: {.column width="30%"}
+![](images/shiny.png){fig-align="center"}
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="65%"}
+You might invest days, weeks, or even months developing an impressive data science workflow and your confident that the results of your workflow are brimming with *value* - value to you, your colleagues, your clients, or decision makers at your company.
+
+Failure to **communicate** the results of your workflow to the pertinent parties leads to a loss of value. As such, it's worth investing in strategies that can make your workflow results "shine bright" for all to see and consume. Enter [`shiny`](https://shiny.posit.co/)!
+:::
+:::
+
+Shiny is an open-source R and Python package and is used to build *interactive web applications*. The best part? You don't have to be a web developer to create a shiny app! You just need to know a bit of R and/or Python. Shiny is 100% code-based, which sets it apart from other popular business intelligence (BI) tools.
+
+## What's in a Shiny App?
+
+Most shiny applications have 4 components:
+
+-   **Header:** The header is usually at the very top of the shiny application. This is a useful space for things that need to be executed as soon as someone opens your shiny application such as reading in any data or packages.
+
+-   **User Interface (UI):** The UI is where design the visual layout of your application. Specifically where to put your inputs and outputs.
+
+-   **Server Function:** The server function tells shiny *how* to build the various outputs.
+
+-   **Run app:** This is where you combine the UI and Server function into a single shiny application.
+
+Below is the code for a simple shiny application, written in both R and Python:
+
+::: {.panel-tabset group="language"}
+## Python
+
+``` python
+# Header
+from shiny import *
+
+# UI
+app_ui = ui.page_fluid(
+    ui.input_slider("n", "N", 1, 100, 40),
+    ui.output_text_verbatim("txt"),
+)
+
+# Server Function
+def server(input, output, session):
+    @output
+    @render.text
+    def txt():
+        return f"The value of n*2 is {input.n() * 2}"
+
+# Run App
+app = App(app_ui, server)
+```
+
+## R
+
+``` r
+# Header
+library(shiny)
+
+# UI
+ui <- fluidPage(
+  sliderInput("n", "N", 1, 100, 40),
+  textOutput("txt")
+  
+)
+
+# Server Function
+server <- function(input, output) {
+  output$txt <- renderText({
+    paste0("The value of n*2 is: ", input$n * 2)
+  })
+}
+
+# Run App
+shinyApp(ui = ui, server = server)
+```
+:::
+
+## Incorporating Shiny into your Workflow
+
+It can be tempting to incorporate your *entire* data science workflow into your shiny application. This often leads to bloated applications that are frustratingly slow. Instead, it's recommended to decouple the "computationally heavy" parts of your workflow from your shiny application where possible. Consider the two examples below (both of which we've discussed in previous chapters):
+
+-   If your shiny application imports large datasets, consider pre-processing your data before reading it into the shiny application.
+
+-   If your shiny application leverages a machine learning model, consider training/tuning your model outside of shiny and serving it as an API.
+
+By keeping the steps of your workflow independent from each other, you can dramatically improve your shiny application's performance and simplify the underlying code. These are two big steps for making your shiny applications more **production grade!**

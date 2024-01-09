@@ -1,11 +1,145 @@
-# Exercise: Modelling 
+# Exercise: Modelling
 
 Now that we have a polished dataset pinned to Posit Connect, it's time to *understand* what the data is telling us. Furthermore, we can use the data to train a model to help predict future events. However, **this workshop is not a modeling workshop!** The model we will create in this exercise is a proof-of-concept and will not be particularly informative.
 
-## Create a Model
+## Step 1 - Create a Model
 
 The COVID dataset contains a column (`new_cases`) that shows how many new cases of COVID were reported on a specific day. There is seasonality for certain infections (e.g., influenza and RSV), and we can use this COVID dataset to determine if the same applies to COVID. In other words:
 
 > Can we predict new cases of COVID given a specific day of the year?
 
-To highlight the cross-language functionality of Posit Team, we will create this model using Python! There are so many amazing packages and modules available in Python for creating models including Tensorflow, Kersa, and SciKit-Learn. For this workshop we are going to create a simple linear regression model using SciKit-Learn.
+To highlight the cross-language functionality of Posit Team, we will create this model using Python! There are so many amazing packages and modules available in Python for creating models including Tensorflow, Keras, and SciKit-Learn. For this workshop we are going to create a simple linear regression model using SciKit-Learn.
+
+### Load Necessary Packages
+
+``` python
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import PolynomialFeatures
+import matplotlib.pyplot as plt
+```
+
+### Read in Pinned COVID Data
+
+**Reminder**: You'll need to replace `your_name` with your Posit Connect username in all subsequent code blocks.
+
+``` python
+import pins
+
+board = pins.board_connect(allow_pickle_read=True)
+
+covid = board.pin_read("your_name/covid_data")
+```
+
+### Transform Data
+
+Before we can model the COVID data with SciKit-Learn, we need to transform it to a format that is conducive to modeling. In the next steps we will convert the date colum to a date *class*, engineer a new feature called `DayOfYear`, and select only the columns of interest (`DayOfYear` and `new_cases`).
+
+``` python
+# Convert to date class
+covid["date"] = pd.to_datetime(covid["date"])
+
+# Feature engineering: Extracting day of the year as a feature
+covid["DayOfYear"] = covid["date"].dt.dayofyear
+
+# Extract columns of interest
+df = covid[["DayOfYear", "new_cases"]]
+```
+
+### Train Linear Regression Model
+
+``` python
+# Create and train a linear regression model
+covid_model = make_pipeline(PolynomialFeatures(4), LinearRegression()).fit(df.drop(columns="new_cases"), df["new_cases"])
+```
+
+## Step 2 - Make Predictions
+
+Let's use our new model to make prediction of how many new cases of COVID there will be given a day of the year. We'll visualize these predictions using `matplotlib`.
+
+::: callout-warning
+Your predictions/plots may look different depending on which state/province you selected in the previous exercise.
+:::
+
+``` python
+# Make predictions
+covid_pred = covid_model.predict(df.drop(columns="new_cases"))
+
+# Visualize the results
+plt.scatter(df.drop(columns="new_cases"), df["new_cases"], color='black', label='Actual')
+plt.scatter(df.drop(columns="new_cases"), covid_pred, color='blue', s=2, label='Predicted')
+plt.xlabel('Day of Year')
+plt.ylabel('Number of Cases')
+plt.legend()
+plt.show()
+```
+
+![New cases of COVID for Maryland](images/covid-predictions.png){#fig-covid-predictions fig-align="center"}
+
+## Step 3 - Save and Serve Model
+
+In the next steps, we'll convert our linear regression model to a *vetiver model* and subsequently save it as a pin to Posit Connect. We'll then use the pinned model to create a FastAPI that will serve our model so we can interact with it.
+
+### Create a Vetiver Model
+
+``` python
+from vetiver import VetiverModel
+
+# Create Vetiver model
+v = VetiverModel(covid_model, model_name = "publisher1/covid_model", prototype_data=df.drop(columns="new_cases"))
+```
+
+### Save Model as a Pin to Posit Connect
+
+``` python
+from vertiver import vetiver_pin_write
+
+# Save model as pin to Posit Connect. The "board"" was defined above
+vetiver_pin_write(board, v)
+```
+
+### Serve Model as a FastAPI on Posit Connect
+
+In the below code, we will use the pinned model to serve a FastAPI. For our workshop environment, the `CONNECT_SERVER` and `CONNECT_API_KEY` variables are already present in your environment, and you'll use the `os` package to retrieve them.
+
+``` python
+from vetiver import VetiverAPI, deploy_rsconnect
+from rsconnect.api import RSConnectServer
+
+# Define Connect Server
+connect_server = RSConnectServer(
+    url=os.getenv("CONNECT_SERVER")
+    api_key=os.getenv("CONNECT_API_KEY"))
+    
+# Deploy FastAPI    
+deploy_rsconnect(board = board, 
+                 pin_name = "publisher1/covid_model", 
+                 connect_serve==connect_server)
+```
+
+## Step 4 - Interact with FastAPI
+
+With the FastAPI now deployed to Posit Connect, we can programmatically query the API which will return the predicted number of new COVID cases given a specific day of the year. Before we query the API, there are a few variable we should set including the endpoint as well as the query parameters:
+
+``` python
+import os
+import pandas as pd
+from vetiver.server import predict, vetiver_endpoint
+
+# Set vetiver endpoing (URL can be found on Posit Connect)
+#  Might need to add "predict" to the end of the URL
+endpoint = vetiver_endpoint("https://connectexample.posit.co/cnct/content/{APP_ID}/predict")
+
+# Define API key (if not done already)
+api_key = os.getenv("CONNECT_API_KEY")
+
+# Define query parameters. Example: 44th day of the year
+params = pd.DataFrame({'DayOfYear': [44]})
+
+# Query API!
+h = {"Authorization": f"Key {api_key}"}
+predict(endpoint=endpoint, data=params, headers=h)
+```

@@ -75,7 +75,7 @@ covid <- tbl(con, "covid") |>
   collect()
 ```
 
-### Load Data
+## Step 2 - Load Data to Posit Connect
 
 Now that the data has been transformed (filtered for a specific state/province), it's time to *load* the data so that other users/content can access it. For this exercise, we are going to use the popular `pins` package to load the data to Posit Connect.
 
@@ -93,7 +93,7 @@ The second step is to write the data to Posit Connect as a pin. Before running t
 pins::pin_write(board = board, x = covid, name = "publisher1/covid_data", type = "csv")
 ```
 
-### ETL Automation
+## Step 3 - Publish Workflow and Automate
 
 Although the COVID dataset is static, from early 2020 to mid 2023, it was being updated daily. If the data changes, you'll need to re-run the ETL workflow described above to ensure the pinned dataset reflects the latest data. This is a manual process that we can automate with the help of Posit Team!
 
