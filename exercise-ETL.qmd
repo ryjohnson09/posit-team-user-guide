@@ -2,8 +2,6 @@
 
 ![ETL Workflow](images/exercise-etl.png){#fig-etl-workflow fig-align="center" width="370"}
 
-## Background and Goals {#sec-etl-background}
-
 A common data science workflow entails **E**xtracting data, **T**ransforming it, and then **L**oading (ETL) it to a location to be shared with others or consumed by other content. In this exercise, you will get practice creating an ETL workflow within Posit Team. You will also leverage the job scheduling feature in Posit Connect to ensure the data remains updated automatically.
 
 The data for this exercise is "real" data regarding cases of COVID19 in the United States from 2020 to 2023. While this is a relatively small dataset, the ETL workflow (as shown in @fig-etl-workflow) is designed to work with data of all sizes! Here is a preview of the COVID dataset with an explanation of the various columns:

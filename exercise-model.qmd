@@ -1,6 +1,15 @@
-# Exercise: Modelling
+# Exercise: Modelling {#sec-exercise-modelling}
+
+![Model Workflow](images/model-workflow.png){#fig-model-workflow fig-align="center" width="495"}
 
 Now that we have a polished dataset pinned to Posit Connect, it's time to *understand* what the data is telling us. Furthermore, we can use the data to train a model to help predict future events. However, **this workshop is not a modeling workshop!** The model we will create in this exercise is a proof-of-concept and will not be particularly informative.
+
+In this exercise (as shown in @fig-model-workflow), you will:
+
+1.  Read in the pinned COVID data
+2.  Use data to create a linear regression model in Posit Workbench (VS Code)
+3.  Pin the model to Posit Connect
+4.  Serve the pinned model as a FastAPI on Posit Connect
 
 ## Step 1 - Create a Model
 

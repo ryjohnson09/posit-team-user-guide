@@ -82,9 +82,11 @@ shinyApp(ui = ui, server = server)
 
 ## Incorporating Shiny into your Workflow
 
-It can be tempting to incorporate your *entire* data science workflow into your shiny application. This often leads to bloated applications that are frustratingly slow. Instead, it's recommended to decouple the "computationally heavy" parts of your workflow from your shiny application where possible. Consider the two examples below (both of which we've discussed in previous chapters):
+![Shiny application best practices](images/shiny-prod.jpg){#fig-shiny-prod}
 
--   If your shiny application imports large datasets, consider pre-processing your data before reading it into the shiny application.
+It can be tempting to incorporate your *entire* data science workflow into your shiny application. This often leads to bloated applications that are frustratingly slow (see left side of @fig-shiny-prod). Instead, it's recommended to decouple the "computationally heavy" parts of your workflow from your shiny application where possible (see right side of @fig-shiny-prod). Consider the two examples below (both of which we've discussed in previous chapters):
+
+-   If your shiny application relies on large datasets, make sure to only read in the data required for the application. Also consider pre-processing your data before reading it into the shiny application.
 
 -   If your shiny application leverages a machine learning model, consider training/tuning your model outside of shiny and serving it as an API.
 
