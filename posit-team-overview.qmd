@@ -6,6 +6,10 @@
 
 Posit Team is a bundled offering of Posit's three professional data science tools including Posit Workbench, Posit Connect, and Posit Package Manager. These tools are designed to fully support end-to-end data science workflows in both R and Python from code development, sharing data products, and managing environments.
 
+A quick overview of Posit Team and which development tools, supported content for hosting, and repository options are shown in @fig-pst-features.
+
+![Posit Team Features](images/pst-features.png){#fig-pst-features fig-align="center"}
+
 ### Posit Workbench
 
 Data scientist leverage Posit Workbench to *create insights* (@fig-pst-overview). As the name implies, Posit Workbench contains numerous "tools" for insight development, including a variety of integrated development environments (IDEs) to choose from. Currently, Posit Workbench supports Jupyter Notebook, Jupyter Lab, RStudio Pro and Visual Studio Code (@fig-pw-new-session).
