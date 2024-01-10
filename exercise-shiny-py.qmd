@@ -1,4 +1,4 @@
-# Exercise: Shiny for Python
+# Exercise: Shiny for Python {#sec-exercise-shiny-py}
 
 ![Shiny + FastAPI workflow](images/shiny-fastapi.png){#fig-shiny-fastapi fig-align="center" width="444"}
 
