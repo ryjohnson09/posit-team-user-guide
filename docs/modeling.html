@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.442">
+<meta name="generator" content="quarto-1.4.541">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -96,6 +96,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -114,11 +115,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./modeling.html">Understand</a></li><li class="breadcrumb-item"><a href="./modeling.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Modeling with Posit Team</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -129,7 +130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./images/logo-team-full-color.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -272,7 +273,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -314,12 +315,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Machine Learning (ML) is an exciting and ever-evolving facet of data science, offering a valuable means to extract insights from your dataset that may not be readily apparent through basic plots and tables. While generating models can pose certain challenges, the greater challenge often lies in determining the methods to save, distribute, and serve your model so that others can interact with it. In this chapter, we’ll discuss how Posit Team can be used to support the entire ML life cycle, from creation to delivery!</p>
 <section id="the-machine-learning-life-cycle" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="the-machine-learning-life-cycle"><span class="header-section-number">6.1</span> The Machine Learning Life Cycle</h2>
-<div id="fig-ml-lifecycle" class="quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-ml-lifecycle" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ml-lifecycle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/ml_ops_cycle.png" class="img-fluid quarto-figure-center figure-img">
+<img src="images/ml_ops_cycle.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-ml-lifecycle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ml-lifecycle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.1: Machine Learning Life Cycle
 </figcaption>
 </figure>
@@ -359,9 +360,10 @@ Figure&nbsp;6.1: Machine Learning Life Cycle
 <p>Given the iterative nature of the ML life cycle, there exists tools explicitly designed to assist with the deployment and maintenance (i.e.&nbsp;“operations”) of ML models. This practice is known as <strong>M</strong>achine <strong>L</strong>earning <strong>O</strong>perations, or <strong>MLOps</strong>. Posit has created a MLOps framework for both R and Python known as <a href="https://vetiver.rstudio.com/"><code>vetiver</code></a>. <code>vetiver</code> was designed to fill the tool gap in the ML life cycle around versioning, deploying, and monitoring model performance.</p>
 <section id="vetiver-workflow-with-posit-team" class="level3" data-number="6.2.1">
 <h3 data-number="6.2.1" class="anchored" data-anchor-id="vetiver-workflow-with-posit-team"><span class="header-section-number">6.2.1</span> <code>vetiver</code> workflow with Posit Team</h3>
-<div class="cell">
+<div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
+<p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
   A(Convert model to\nvetiver model) --&gt; B(Pin vetiver model\nto Posit Connect)
@@ -369,6 +371,7 @@ Figure&nbsp;6.1: Machine Learning Life Cycle
   C --&gt; D(Make a prediction!)
 </pre>
 </div>
+<p></p></figure><p></p>
 </div>
 </div>
 </div>
@@ -444,21 +447,25 @@ Figure&nbsp;6.1: Machine Learning Life Cycle
 <section id="interacting-with-apis-on-posit-connect" class="level3" data-number="6.2.2">
 <h3 data-number="6.2.2" class="anchored" data-anchor-id="interacting-with-apis-on-posit-connect"><span class="header-section-number">6.2.2</span> Interacting with APIs on Posit Connect</h3>
 <p>Human interactions with an API usually requires a visualization layer. When creating an API for your model with <code>vetiver</code>, the default visual documentation for Plumber is <a href="https://swagger.io/"><em>swagger</em></a>, and for FastAPI it’s <a href="https://rapidocweb.com/"><em>RapiDoc</em></a>. Below is an example of the RapiDoc documentatin of a FastAPI hosted on Posit Connect:</p>
-<div id="fig-fastapi-rapidoc" class="quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-fastapi-rapidoc" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-fastapi-rapidoc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/fastapi-rapidoc.png" class="img-fluid quarto-figure-center figure-img">
+<img src="images/fastapi-rapidoc.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-fastapi-rapidoc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fastapi-rapidoc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.2: RapiDoc documentation for a FastAPI hosted on Posit Connect
 </figcaption>
 </figure>
 </div>
 <p>This example API uses a model to predict the number of COVID cases given a specific day of the year. You will create a similar API in the next exercise! The prediction is generated by sending a <strong>POST</strong> request to the API with specific parameters. In this case, there is only one parameter, the day of the year (<code>DayOfYear</code>). RapiDoc allows you to try out the API. In the image below, we asked the API to return the prediction of the number of COVID cases on day 46 of the year. At the bottom, you can see the response of approximately 1,033 cases:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/rapidoc-response.png" class="img-fluid figure-img"></p>
-<figcaption>Interacting with RapiDoc</figcaption>
+<div id="fig-rapidoc-response" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rapidoc-response-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/rapidoc-response.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rapidoc-response-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.3: Interacting with RapiDoc
+</figcaption>
 </figure>
 </div>
 <p>You can also interact with APIs programmatically. In the code below, we’ll show you how to query an API using <code>vetiver</code> hosted on Posit Connect using both R and Python. Full instructions (including additional authentication options) can be found <a href="https://docs.posit.co/connect/user/vetiver/">here</a>.</p>
@@ -630,38 +637,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    const typesetMath = (el) => {
-      if (window.MathJax) {
-        // MathJax Typeset
-        window.MathJax.typeset([el]);
-      } else if (window.katex) {
-        // KaTeX Render
-        var mathElements = el.getElementsByClassName("math");
-        var macros = [];
-        for (var i = 0; i < mathElements.length; i++) {
-          var texText = mathElements[i].firstChild;
-          if (mathElements[i].tagName == "SPAN") {
-            window.katex.render(texText.data, mathElements[i], {
-              displayMode: mathElements[i].classList.contains('display'),
-              throwOnError: false,
-              macros: macros,
-              fleqn: false
-            });
-          }
-        }
-      }
-    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
         }
-        typesetMath(container);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
         return container.innerHTML
       } else {
-        typesetMath(note);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -670,7 +667,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      typesetMath(note);
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
       return note.innerHTML;
     }
   }
@@ -894,7 +893,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./exercise-ETL.html" class="pagination-link  aria-label=" <span="">5&nbsp; <span class="chapter-title">Exercise: ETL</span>"&gt;
+      <a href="./exercise-ETL.html" class="pagination-link  aria-label=" &lt;span="" etl&lt;="" span&gt;"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Exercise: ETL</span></span>
       </a>          
   </div>

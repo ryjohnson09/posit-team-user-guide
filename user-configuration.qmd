@@ -54,9 +54,9 @@ Publishing your data products to Posit Connect is arguably the most valuable fea
 
 Navigate to **Tools –\> Global Options –\> Publishing.** In some cases, the Posit Connect will already be configured for you. To add a new Posit Connect instance, click the **Connect** button and follow the instructions. The only thing needed is the Posit Connect URL which can be supplied by your System Administrator.
 
-![RStudio - Configure Posit Connect Instance - Step1](images/rstudio-connect1.png){#rstudio-connect1 fig-align="center" width="940"}
+![RStudio - Configure Posit Connect Instance - Step1](images/rstudio-connect1.png){#fig-rstudio-connect1 fig-align="center" width="940"}
 
-![RStudio - Configure Posit Connect Instance - Step 2](images/rstudio-connect2.png){#rstudio-connect2 fig-align="center" width="591"}
+![RStudio - Configure Posit Connect Instance - Step 2](images/rstudio-connect2.png){#fig-rstudio-connect2 fig-align="center" width="591"}
 
 ## CLI Publishing
 

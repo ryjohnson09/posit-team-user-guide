@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.442">
+<meta name="generator" content="quarto-1.4.541">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -62,6 +62,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -77,11 +78,11 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./workshop-access.html">Overview and Setup</a></li><li class="breadcrumb-item"><a href="./posit-team-overview.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Posit Team Overview</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -92,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./images/logo-team-full-color.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -235,7 +236,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -273,12 +274,12 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div id="fig-pst-overview" class="quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-pst-overview" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pst-overview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/pst-overview.png" class="img-fluid quarto-figure-center figure-img">
+<img src="images/pst-overview.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-pst-overview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pst-overview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2.1: Posit Team Overview
 </figcaption>
 </figure>
@@ -287,12 +288,12 @@ Figure&nbsp;2.1: Posit Team Overview
 <h2 data-number="2.1" class="anchored" data-anchor-id="posit-team"><span class="header-section-number">2.1</span> Posit Team</h2>
 <p>Posit Team is a bundled offering of Posit’s three professional data science tools including Posit Workbench, Posit Connect, and Posit Package Manager. These tools are designed to fully support end-to-end data science workflows in both R and Python from code development, sharing data products, and managing environments.</p>
 <p>A quick overview of Posit Team and which development tools, supported content for hosting, and repository options are shown in <a href="#fig-pst-features" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-pst-features</span></a>.</p>
-<div id="fig-pst-features" class="quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-pst-features" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pst-features-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/pst-features.png" class="img-fluid quarto-figure-center figure-img">
+<img src="images/pst-features.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-pst-features-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pst-features-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2.2: Posit Team Features
 </figcaption>
 </figure>
@@ -300,12 +301,12 @@ Figure&nbsp;2.2: Posit Team Features
 <section id="posit-workbench" class="level3" data-number="2.1.1">
 <h3 data-number="2.1.1" class="anchored" data-anchor-id="posit-workbench"><span class="header-section-number">2.1.1</span> Posit Workbench</h3>
 <p>Data scientist leverage Posit Workbench to <em>create insights</em> (<a href="#fig-pst-overview" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-pst-overview</span></a>). As the name implies, Posit Workbench contains numerous “tools” for insight development, including a variety of integrated development environments (IDEs) to choose from. Currently, Posit Workbench supports Jupyter Notebook, Jupyter Lab, RStudio Pro and Visual Studio Code (<a href="#fig-pw-new-session" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-pw-new-session</span></a>).</p>
-<div id="fig-pw-new-session" class="quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-pw-new-session" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pw-new-session-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/workbench-new-session.png" class="img-fluid quarto-figure-center figure-img">
+<img src="images/workbench-new-session.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-pw-new-session-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pw-new-session-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2.3: Posit Workbench - New session options
 </figcaption>
 </figure>
@@ -326,12 +327,12 @@ Figure&nbsp;2.3: Posit Workbench - New session options
 <p>Data scientists leverage Posit Connect to <em>share insights</em> with others (<a href="#fig-pst-overview" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-pst-overview</span></a>). These insights can take many forms including interactive web applications, static reports, application programming interfaces (APIs), and more. Once the insights have been published to Connect (possibly from Posit Workbench), the publisher has full control over sharing, access, and content execution.</p>
 <section id="publishing-options" class="level4" data-number="2.1.2.1">
 <h4 data-number="2.1.2.1" class="anchored" data-anchor-id="publishing-options"><span class="header-section-number">2.1.2.1</span> Publishing Options</h4>
-<div id="fig-publishing-methods" class="quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-publishing-methods" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-publishing-methods-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/publishing-methods.png" class="img-fluid quarto-figure-center figure-img">
+<img src="images/publishing-methods.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-publishing-methods-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-publishing-methods-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2.4: Publishing methods
 </figcaption>
 </figure>
@@ -482,38 +483,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    const typesetMath = (el) => {
-      if (window.MathJax) {
-        // MathJax Typeset
-        window.MathJax.typeset([el]);
-      } else if (window.katex) {
-        // KaTeX Render
-        var mathElements = el.getElementsByClassName("math");
-        var macros = [];
-        for (var i = 0; i < mathElements.length; i++) {
-          var texText = mathElements[i].firstChild;
-          if (mathElements[i].tagName == "SPAN") {
-            window.katex.render(texText.data, mathElements[i], {
-              displayMode: mathElements[i].classList.contains('display'),
-              throwOnError: false,
-              macros: macros,
-              fleqn: false
-            });
-          }
-        }
-      }
-    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
         }
-        typesetMath(container);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
         return container.innerHTML
       } else {
-        typesetMath(note);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -522,7 +513,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      typesetMath(note);
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
       return note.innerHTML;
     }
   }
@@ -746,7 +739,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./workshop-access.html" class="pagination-link  aria-label=" <span="">1&nbsp; <span class="chapter-title">Workshop Access</span>"&gt;
+      <a href="./workshop-access.html" class="pagination-link  aria-label=" &lt;span="" access&lt;="" span&gt;"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Workshop Access</span></span>
       </a>          
   </div>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.442">
+<meta name="generator" content="quarto-1.4.541">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -96,6 +96,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -111,11 +112,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data.html">Data</a></li><li class="breadcrumb-item"><a href="./data.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -126,7 +127,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./images/logo-team-full-color.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -269,7 +270,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -312,12 +313,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="data-import-options" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="data-import-options"><span class="header-section-number">4.1</span> Data Import Options</h2>
 <p>Data lives in a variety of locations in a variety of formats, and as such, there are many options for bringing your data into your development environment. Below are few common options for accessing your data:</p>
-<div id="fig-data-import-options" class="quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-data-import-options" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-data-import-options-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/data-import-options.png" class="img-fluid quarto-figure-center figure-img">
+<img src="images/data-import-options.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-data-import-options-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-import-options-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.1: Data import options
 </figcaption>
 </figure>
@@ -327,12 +328,12 @@ Figure&nbsp;4.1: Data import options
 <section id="a-primer-on-databases" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="a-primer-on-databases"><span class="header-section-number">4.2</span> A Primer on Databases</h2>
 <p>Databases are managed by <strong>D</strong>ata<strong>B</strong>ase <strong>M</strong>anagement <strong>S</strong>ystems (DBMSs). There exists a growing list of DBMSs for databases hosted on-prem (client server), in the Cloud, or in-process. Below are a few common DBMSs:</p>
-<div id="fig-dbms" class="quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-dbms" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-dbms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/dbms.png" class="img-fluid quarto-figure-center figure-img">
+<img src="images/dbms.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-dbms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dbms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.2: Database Management Systems
 </figcaption>
 </figure>
@@ -372,12 +373,12 @@ Figure&nbsp;4.2: Database Management Systems
 <section id="posits-professional-odbc-drivers" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="posits-professional-odbc-drivers"><span class="header-section-number">4.3</span> Posit’s Professional ODBC Drivers</h2>
 <p>Not all DBMSs will provide an ODBC Driver. This can be a major blocker for users attempting to import data into their development environment. To overcome this limitation, Posit has created custom ODBC drivers that work with many of the popular DBMSs used today, including:</p>
-<div id="fig-posit-odbc-drivers" class="quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-posit-odbc-drivers" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-posit-odbc-drivers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/posit-odbc-drivers.png" class="img-fluid quarto-figure-center figure-img">
+<img src="images/posit-odbc-drivers.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-posit-odbc-drivers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-posit-odbc-drivers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.3: Posit’s Professional ODBC Drivers
 </figcaption>
 </figure>
@@ -516,38 +517,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    const typesetMath = (el) => {
-      if (window.MathJax) {
-        // MathJax Typeset
-        window.MathJax.typeset([el]);
-      } else if (window.katex) {
-        // KaTeX Render
-        var mathElements = el.getElementsByClassName("math");
-        var macros = [];
-        for (var i = 0; i < mathElements.length; i++) {
-          var texText = mathElements[i].firstChild;
-          if (mathElements[i].tagName == "SPAN") {
-            window.katex.render(texText.data, mathElements[i], {
-              displayMode: mathElements[i].classList.contains('display'),
-              throwOnError: false,
-              macros: macros,
-              fleqn: false
-            });
-          }
-        }
-      }
-    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
         }
-        typesetMath(container);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
         return container.innerHTML
       } else {
-        typesetMath(note);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -556,7 +547,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      typesetMath(note);
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
       return note.innerHTML;
     }
   }
@@ -780,7 +773,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./user-configuration.html" class="pagination-link  aria-label=" <span="">3&nbsp; <span class="chapter-title">User Configuration</span>"&gt;
+      <a href="./user-configuration.html" class="pagination-link  aria-label=" &lt;span="" configuration&lt;="" span&gt;"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">User Configuration</span></span>
       </a>          
   </div>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.442">
+<meta name="generator" content="quarto-1.4.541">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -96,6 +96,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -111,11 +112,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data.html">Data</a></li><li class="breadcrumb-item"><a href="./exercise-ETL.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Exercise: ETL</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -126,7 +127,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./images/logo-team-full-color.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -269,7 +270,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -309,12 +310,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="fig-etl-workflow" class="quarto-figure quarto-figure-center anchored" width="370" data-fig-align="center">
+<div id="fig-etl-workflow" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-etl-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/exercise-etl.png" class="img-fluid quarto-figure-center figure-img" width="370">
+<img src="images/exercise-etl.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="370">
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-etl-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-etl-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.1: ETL Workflow
 </figcaption>
 </figure>
@@ -389,45 +390,45 @@ Figure&nbsp;5.1: ETL Workflow
 <h2 data-number="5.3" class="anchored" data-anchor-id="step-3---publish-workflow-and-automate"><span class="header-section-number">5.3</span> Step 3 - Publish Workflow and Automate</h2>
 <p>Although the COVID dataset is static, from early 2020 to mid 2023, it was being updated daily. If the data changes, you’ll need to re-run the ETL workflow described above to ensure the pinned dataset reflects the latest data. This is a manual process that we can automate with the help of Posit Team!</p>
 <p>First, click the blue deployment button at the top of the RStudio IDE:</p>
-<div id="fig-deployment-button" class="quarto-figure quarto-figure-center anchored" width="686" data-fig-align="center">
+<div id="fig-deployment-button" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-deployment-button-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/deployment-button.png" class="img-fluid quarto-figure-center figure-img" width="686">
+<img src="images/deployment-button.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="686">
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-deployment-button-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-deployment-button-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.2: RStudio - Deployment Button
 </figcaption>
 </figure>
 </div>
 <p>In the subsequent pop-up window, select <strong>Posit Connect.</strong> Importantly, to re-run the quarto document on the Connect server, we need to <strong>publish document with source code</strong>:</p>
-<div id="fig-with-source-code" class="quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-with-source-code" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-with-source-code-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/with-source-code.png" class="img-fluid quarto-figure-center figure-img">
+<img src="images/with-source-code.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-with-source-code-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-with-source-code-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.3: RStudio - Publish Options
 </figcaption>
 </figure>
 </div>
 <p>The last step is to define the files you want to send to Connect, the Connect instance you want to publish to, and the title of the content. If everything looks good, go ahead and click <strong>Publish</strong>!</p>
-<div id="fig-rstudio-publish" class="quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-rstudio-publish" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rstudio-publish-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/rstudio-publish.png" class="img-fluid quarto-figure-center figure-img">
+<img src="images/rstudio-publish.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-rstudio-publish-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-publish-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.4: RStudio - Publish to Posit Connect
 </figcaption>
 </figure>
 </div>
 <p>Once hosted on Connect, let’s set the Quarto document to re-run on a daily basis. We accomplish this by selecting the <em>Schedule</em> tab at the top. In the below configuration, the Quarto document will run every day at 9:48 am (America - New York time) and will ensure the pinned dataset is always up-to-date!</p>
-<div id="fig-schedule" class="quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-schedule" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-schedule-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/schedule.png" class="img-fluid quarto-figure-center figure-img">
+<img src="images/schedule.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-schedule-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-schedule-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.5: Job Scheduling on Posit Connect
 </figcaption>
 </figure>
@@ -566,38 +567,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    const typesetMath = (el) => {
-      if (window.MathJax) {
-        // MathJax Typeset
-        window.MathJax.typeset([el]);
-      } else if (window.katex) {
-        // KaTeX Render
-        var mathElements = el.getElementsByClassName("math");
-        var macros = [];
-        for (var i = 0; i < mathElements.length; i++) {
-          var texText = mathElements[i].firstChild;
-          if (mathElements[i].tagName == "SPAN") {
-            window.katex.render(texText.data, mathElements[i], {
-              displayMode: mathElements[i].classList.contains('display'),
-              throwOnError: false,
-              macros: macros,
-              fleqn: false
-            });
-          }
-        }
-      }
-    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
         }
-        typesetMath(container);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
         return container.innerHTML
       } else {
-        typesetMath(note);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -606,7 +597,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      typesetMath(note);
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
       return note.innerHTML;
     }
   }
@@ -830,7 +823,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./data.html" class="pagination-link  aria-label=" <span="">4&nbsp; <span class="chapter-title">Data</span>"&gt;
+      <a href="./data.html" class="pagination-link  aria-label=" &lt;span="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data</span></span>
       </a>          
   </div>

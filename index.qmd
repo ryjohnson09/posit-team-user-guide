@@ -42,7 +42,7 @@ What is considered *foundational knowledge*? For this workshop, foundational kno
 
 This workshop will loosely follow the model of a typical data science project as described in [R for Data Science](https://r4ds.hadley.nz/):
 
-![Data science project model](images/data-science-model.png){#data-science-model fig-align="center"}
+![Data science project model](images/data-science-model.png){#fig-data-science-model fig-align="center"}
 
 We'll begin with some workshop logistics and an overview of Posit Team. The remainder of the workshop will follow the above *Data* (focus on *Import*), *Understand*, and *Communicate* data science model. A full agenda is listed below:
 

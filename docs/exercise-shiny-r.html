@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.442">
+<meta name="generator" content="quarto-1.4.541">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -96,6 +96,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -111,11 +112,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./shiny.html">Communicate</a></li><li class="breadcrumb-item"><a href="./exercise-shiny-r.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Exercise: Shiny for R</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -126,7 +127,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./images/logo-team-full-color.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -269,7 +270,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -305,12 +306,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="fig-git-backed-workflow" class="quarto-figure quarto-figure-center anchored" width="506" data-fig-align="center">
+<div id="fig-git-backed-workflow" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-git-backed-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/git-backed-workflow.jpg" class="img-fluid quarto-figure-center figure-img" width="506">
+<img src="images/git-backed-workflow.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="506">
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-git-backed-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-git-backed-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;10.1: Git Backed Deployment Workflow
 </figcaption>
 </figure>
@@ -341,12 +342,12 @@ Figure&nbsp;10.1: Git Backed Deployment Workflow
 <h2 data-number="10.2" class="anchored" data-anchor-id="step-1---initiate-git-backed-deployment-on-posit-connect"><span class="header-section-number">10.2</span> Step 1 - Initiate Git-Backed Deployment on Posit Connect</h2>
 <p>Within the GitHub repository is a directory called <code>shiny-app-r</code>. Within that directory will be the two files required for git-backed deployment: the application itself (<code>app.py</code>) and the required <code>manifest.json</code> file.</p>
 <p>Within Posit Connect, navigate to the <strong>Content</strong> page and click the <strong>Publish</strong> button at the top. In the dropdown menu, select <strong>Import from Git</strong>.</p>
-<div id="fig-publish-dropdown" class="quarto-figure quarto-figure-center anchored" width="321" data-fig-align="center">
+<div id="fig-publish-dropdown" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-publish-dropdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/import-from-git.png" class="img-fluid quarto-figure-center figure-img" width="321">
+<img src="images/import-from-git.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="321">
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-publish-dropdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-publish-dropdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;10.2: Publish Drop Down Options
 </figcaption>
 </figure>
@@ -355,12 +356,12 @@ Figure&nbsp;10.2: Publish Drop Down Options
 <section id="step-2---add-repository-details" class="level2" data-number="10.3">
 <h2 data-number="10.3" class="anchored" data-anchor-id="step-2---add-repository-details"><span class="header-section-number">10.3</span> Step 2 - Add Repository Details</h2>
 <p>In the next popup window, you’ll need to supply the URL for the git repository.</p>
-<div id="fig-repo-url" class="quarto-figure quarto-figure-center anchored" width="432" data-fig-align="center">
+<div id="fig-repo-url" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-repo-url-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/repo-url.png" class="img-fluid quarto-figure-center figure-img" width="432">
+<img src="images/repo-url.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="432">
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-repo-url-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-repo-url-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;10.3: Git Repository URL
 </figcaption>
 </figure>
@@ -383,35 +384,35 @@ Tip
 <section id="step-3---deploy-content" class="level2" data-number="10.4">
 <h2 data-number="10.4" class="anchored" data-anchor-id="step-3---deploy-content"><span class="header-section-number">10.4</span> Step 3 - Deploy Content</h2>
 <p>At this point, Posit Connect will look for “deployable directories.” In other words, it’s looking for directories in the repository that contain a <code>manifest.json</code> file. There should only be one deployable directory (<code>shiny-app-r</code>). Ensure it’s selected, give your application a name, then click <strong>Deploy Content</strong>!</p>
-<div id="fig-deploy-content" class="quarto-figure quarto-figure-center anchored" width="452" data-fig-align="center">
+<div id="fig-deploy-content" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-deploy-content-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/deploy-content.png" class="img-fluid quarto-figure-center figure-img" width="452">
+<img src="images/deploy-content.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="452">
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-deploy-content-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-deploy-content-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;10.4: Deploy Content from Git Repository
 </figcaption>
 </figure>
 </div>
 <p>Connect will then read the <code>manifest.json</code> file and install any environment dependencies needed to ensure the application runs properly. After the deployment process is complete, click <strong>Open Content</strong> to view the application on Posit Connect!</p>
-<div id="fig-covid-dashboard" class="quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-covid-dashboard" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-covid-dashboard-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/covid-dashbaord.png" class="img-fluid quarto-figure-center figure-img">
+<img src="images/covid-dashbaord.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-covid-dashboard-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-covid-dashboard-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;10.5: Covid Dashboard
 </figcaption>
 </figure>
 </div>
 <p>This shiny dashboard tells us the same information as our previous shiny for Python application: how many new COVID cases are predicted for a given day of the year. As you can see, this application has some additional details and features that greatly improve the user experience including the total number of COVID cases for the given state/province, and the single day max number of new COVID cases.</p>
 <p>By default, Posit Connect will scan the linked git repository for any changes every 15 minutes. If any changes were detected (e.g., a new commit to the <code>main</code> branch), Posit Connect will automatically redeploy the application! You can also manually check for repository updates by clicking the <strong>Info</strong> tab in the top right corner and selection <strong>Update Now</strong> from the side bar:</p>
-<div id="fig-update-content" class="quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-update-content" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-update-content-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/update-content.png" class="img-fluid quarto-figure-center figure-img">
+<img src="images/update-content.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-update-content-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-update-content-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;10.6: Manually Check Git Repository for Changes
 </figcaption>
 </figure>
@@ -549,38 +550,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    const typesetMath = (el) => {
-      if (window.MathJax) {
-        // MathJax Typeset
-        window.MathJax.typeset([el]);
-      } else if (window.katex) {
-        // KaTeX Render
-        var mathElements = el.getElementsByClassName("math");
-        var macros = [];
-        for (var i = 0; i < mathElements.length; i++) {
-          var texText = mathElements[i].firstChild;
-          if (mathElements[i].tagName == "SPAN") {
-            window.katex.render(texText.data, mathElements[i], {
-              displayMode: mathElements[i].classList.contains('display'),
-              throwOnError: false,
-              macros: macros,
-              fleqn: false
-            });
-          }
-        }
-      }
-    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
         }
-        typesetMath(container);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
         return container.innerHTML
       } else {
-        typesetMath(note);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -589,7 +580,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      typesetMath(note);
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
       return note.innerHTML;
     }
   }
@@ -813,7 +806,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./exercise-shiny-py.html" class="pagination-link  aria-label=" <span="">9&nbsp; <span class="chapter-title">Exercise: Shiny for Python</span>"&gt;
+      <a href="./exercise-shiny-py.html" class="pagination-link  aria-label=" &lt;span="" shiny="" for="" python&lt;="" span&gt;"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Exercise: Shiny for Python</span></span>
       </a>          
   </div>

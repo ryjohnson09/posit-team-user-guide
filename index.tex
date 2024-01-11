@@ -182,7 +182,8 @@
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage{bookmark}
+
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
@@ -197,6 +198,7 @@
 \date{}
 
 \begin{document}
+
 \renewcommand*\contentsname{Table of contents}
 {
 \hypersetup{linkcolor=}
@@ -229,7 +231,7 @@ Training}.
 
 \markright{Workshop Goal}
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, colframe=quarto-callout-note-color-frame, titlerule=0mm, colback=white, bottomrule=.15mm, toprule=.15mm, arc=.35mm, opacitybacktitle=0.6, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Workshop Goal}, breakable, opacityback=0, left=2mm, rightrule=.15mm, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Workshop Goal}, opacitybacktitle=0.6, titlerule=0mm, arc=.35mm, bottomrule=.15mm, rightrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, coltitle=black, colframe=quarto-callout-note-color-frame, left=2mm, opacityback=0, colback=white, breakable, bottomtitle=1mm, toptitle=1mm, leftrule=.75mm]
 
 Provide every participant with a \textbf{foundational knowledge} of
 Posit Team through interactive (real) data science workflows.
@@ -285,11 +287,13 @@ Science}:
 
 \begin{figure}
 
-{\centering \includegraphics{images/data-science-model.png}
+\centering{
+
+\includegraphics{images/data-science-model.png}
 
 }
 
-\caption{Data science project model}
+\caption{\label{fig-data-science-model}Data science project model}
 
 \end{figure}%
 
@@ -634,20 +638,27 @@ System Administrator.
 
 \begin{figure}
 
-{\centering \includegraphics[width=9.79167in,height=\textheight]{images/rstudio-connect1.png}
+\centering{
+
+\includegraphics[width=9.79167in,height=\textheight]{images/rstudio-connect1.png}
 
 }
 
-\caption{RStudio - Configure Posit Connect Instance - Step1}
+\caption{\label{fig-rstudio-connect1}RStudio - Configure Posit Connect
+Instance - Step1}
 
-\end{figure}%%
+\end{figure}%
+
 \begin{figure}
 
-{\centering \includegraphics[width=6.15625in,height=\textheight]{images/rstudio-connect2.png}
+\centering{
+
+\includegraphics[width=6.15625in,height=\textheight]{images/rstudio-connect2.png}
 
 }
 
-\caption{RStudio - Configure Posit Connect Instance - Step 2}
+\caption{\label{fig-rstudio-connect2}RStudio - Configure Posit Connect
+Instance - Step 2}
 
 \end{figure}%
 
@@ -1159,7 +1170,7 @@ around versioning, deploying, and monitoring model performance.
 \subsection{\texorpdfstring{\texttt{vetiver} workflow with Posit
 Team}{vetiver workflow with Posit Team}}\label{vetiver-workflow-with-posit-team}
 
-\includegraphics[width=7.85in,height=0.72in]{modeling_files/figure-latex/mermaid-figure-1.png}
+\includegraphics[width=7.85in,height=0.71in]{modeling_files/figure-latex/mermaid-figure-1.png}
 
 A typical \texttt{vetiver} workflow within Posit Team, depicted in the
 flow diagram above, consists of converting a model to a \emph{vetiver
@@ -1287,11 +1298,13 @@ bottom, you can see the response of approximately 1,033 cases:
 
 \begin{figure}
 
-{\centering \includegraphics{images/rapidoc-response.png}
+\centering{
+
+\includegraphics{images/rapidoc-response.png}
 
 }
 
-\caption{Interacting with RapiDoc}
+\caption{\label{fig-rapidoc-response}Interacting with RapiDoc}
 
 \end{figure}%
 
@@ -1462,7 +1475,7 @@ Let's use our new model to make prediction of how many new cases of
 COVID there will be given a day of the year. We'll visualize these
 predictions using \texttt{matplotlib}.
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, colframe=quarto-callout-warning-color-frame, titlerule=0mm, colback=white, bottomrule=.15mm, toprule=.15mm, arc=.35mm, opacitybacktitle=0.6, bottomtitle=1mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, breakable, opacityback=0, left=2mm, rightrule=.15mm, toptitle=1mm, colbacktitle=quarto-callout-warning-color!10!white, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, opacitybacktitle=0.6, titlerule=0mm, arc=.35mm, bottomrule=.15mm, rightrule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, coltitle=black, colframe=quarto-callout-warning-color-frame, left=2mm, opacityback=0, colback=white, breakable, bottomtitle=1mm, toptitle=1mm, leftrule=.75mm]
 
 Your predictions/plots may look different depending on which
 state/province you selected in the previous exercise.
@@ -1587,7 +1600,9 @@ parameters:
 
 \chapter{Shiny}\label{shiny}
 
+\begin{center}
 \includegraphics{images/shiny.png}
+\end{center}
 
 You might invest days, weeks, or even months developing an impressive
 data science workflow and your confident that the results of your
@@ -2029,7 +2044,7 @@ After supplying the URL, click \textbf{Next} where you'll be asked to
 select a branch. This repository only contains a single branch called
 \texttt{main}. Ensure \texttt{main} is selected and click \textbf{Next}.
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, colframe=quarto-callout-tip-color-frame, titlerule=0mm, colback=white, bottomrule=.15mm, toprule=.15mm, arc=.35mm, opacitybacktitle=0.6, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, breakable, opacityback=0, left=2mm, rightrule=.15mm, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, opacitybacktitle=0.6, titlerule=0mm, arc=.35mm, bottomrule=.15mm, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black, colframe=quarto-callout-tip-color-frame, left=2mm, opacityback=0, colback=white, breakable, bottomtitle=1mm, toptitle=1mm, leftrule=.75mm]
 
 You can deploy the same piece of content from a single git repository!
 For example, maybe you have a developmental version on a \texttt{dev}
