@@ -388,7 +388,7 @@ Figure&nbsp;8.1: Shiny application best practices
 </figcaption>
 </figure>
 </div>
-<p>It can be tempting to incorporate your <em>entire</em> data science workflow into your shiny application. This often leads to bloated applications that are frustratingly slow (see left side of <a href="#fig-shiny-prod" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-shiny-prod</span></a>). Instead, it’s recommended to decouple the “computationally heavy” parts of your workflow from your shiny application where possible (see right side of <a href="#fig-shiny-prod" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-shiny-prod</span></a>). Consider the two examples below (both of which we’ve discussed in previous chapters):</p>
+<p>It can be tempting to incorporate your <em>entire</em> data science workflow into your shiny application. This often leads to bloated applications that are frustratingly slow (see left side of <a href="#fig-shiny-prod" class="quarto-xref">Figure&nbsp;<span>8.1</span></a>). Instead, it’s recommended to decouple the “computationally heavy” parts of your workflow from your shiny application where possible (see right side of <a href="#fig-shiny-prod" class="quarto-xref">Figure&nbsp;<span>8.1</span></a>). Consider the two examples below (both of which we’ve discussed in previous chapters):</p>
 <ul>
 <li><p>If your shiny application relies on large datasets, make sure to only read in the data required for the application. Also consider pre-processing your data before reading it into the shiny application.</p></li>
 <li><p>If your shiny application leverages a machine learning model, consider training/tuning your model outside of shiny and serving it as an API.</p></li>

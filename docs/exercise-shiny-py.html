@@ -321,7 +321,7 @@ Figure&nbsp;9.1: Shiny + FastAPI workflow
 </figcaption>
 </figure>
 </div>
-<p>In this exercise, you will get practice creating a Shiny or Python application in Posit Workbench (VS Code) that makes predictions of new cases of COVID given a specific day of the year. This shiny application will be fairly “lightweight” in that it’s primary role is to query the FastAPI on Posit Connect that serving our COVID model we created earlier in <a href="#sec-exercise-modelling" class="quarto-xref"><span class="quarto-unresolved-ref">sec-exercise-modelling</span></a>. The user interface will only contain two things: a date selection box, and a text box with the predicted number of COVID cases:</p>
+<p>In this exercise, you will get practice creating a Shiny or Python application in Posit Workbench (VS Code) that makes predictions of new cases of COVID given a specific day of the year. This shiny application will be fairly “lightweight” in that it’s primary role is to query the FastAPI on Posit Connect that serving our COVID model we created earlier in <a href="exercise-model.html" class="quarto-xref"><span>Chapter 7</span></a>. The user interface will only contain two things: a date selection box, and a text box with the predicted number of COVID cases:</p>
 <div id="fig-shiny-ui-py" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-shiny-ui-py-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -353,7 +353,7 @@ Figure&nbsp;9.2: COVID Prediction App - Shiny for Python
 </section>
 <section id="step-2---create-user-interface" class="level2" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="step-2---create-user-interface"><span class="header-section-number">9.2</span> Step 2 - Create User Interface</h2>
-<p>As shown in <a href="#fig-shiny-ui-py" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-shiny-ui-py</span></a>, our application only has an <em>input date</em>, and <em>output text</em>.</p>
+<p>As shown in <a href="#fig-shiny-ui-py" class="quarto-xref">Figure&nbsp;<span>9.2</span></a>, our application only has an <em>input date</em>, and <em>output text</em>.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># User Interface</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>app_ui <span class="op">=</span> ui.page_fluid(</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    ui.input_date(<span class="st">"day"</span>, <span class="st">"Select Date:"</span>, value<span class="op">=</span><span class="st">"2021-01-01"</span>),</span>
@@ -391,7 +391,7 @@ Figure&nbsp;9.2: COVID Prediction App - Shiny for Python
 <p>Access the terminal within VS Code (click the three line icon in the top left corner followed by <code>Terminal</code> –&gt; <code>New Terminal</code>). The workshop environment is already configured with the <code>shiny</code> CLI tool which we can use to run the shiny application.</p>
 <p>To run the shiny application, make sure you’ve saved your application as <code>app.py</code> and you know where it’s located in your file system, then type the following command into the terminal:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">shiny</span> run /path/to/app.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You’ll see a link appear in the terminal that you can click, or you can use the Posit Workbench VS Code extension (red arrow in <a href="#fig-vscode-pwb-extension" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-vscode-pwb-extension</span></a>) to view actively running “proxied servers.” In the below example, you can see two servers running. The bottom server is actively running our shiny app!</p>
+<p>You’ll see a link appear in the terminal that you can click, or you can use the Posit Workbench VS Code extension (red arrow in <a href="#fig-vscode-pwb-extension" class="quarto-xref">Figure&nbsp;<span>9.3</span></a>) to view actively running “proxied servers.” In the below example, you can see two servers running. The bottom server is actively running our shiny app!</p>
 <div id="fig-vscode-pwb-extension" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-vscode-pwb-extension-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">

@@ -1,0 +1,417 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to Posit Team User Training!",
+    "section": "",
+    "text": "Welcome to Posit Team User Training!\nThis book is a companion to the live Posit Team User training workshop hosted by Posit.\nPosit Team is a bundled offering of Posit’s three professional data science tools: Posit Workbench, Posit Connect, and Posit Workbench. For this book, we consider Posit Team users to be data scientists that are writing code and developing data products (e.g., Shiny applications and Quarto documents). For Posit Team administrators, we’d suggest checking out our Administrator Training.",
+    "crumbs": [
+      "Welcome to Posit Team User Training!"
+    ]
+  },
+  {
+    "objectID": "index.html#workshop-goal",
+    "href": "index.html#workshop-goal",
+    "title": "Welcome to Posit Team User Training!",
+    "section": "Workshop Goal",
+    "text": "Workshop Goal\n\n\n\n\n\n\nWorkshop Goal\n\n\n\nProvide every participant with a foundational knowledge of Posit Team through interactive (real) data science workflows.\n\n\nWhat is considered foundational knowledge? For this workshop, foundational knowledge is the minimum Posit Team feature set and/or workflows that every user should be aware of, including:\nPosit Workbench\n\nIntegrated Development Environment (IDE) Options\nData Access\nJob Launcher\n\nPosit Connect\n\nPublishing Methods\nContent Sharing and Access Control\nJob Scheduling\nSupported Content Types\nRuntime Settings\n\nPosit Package Manager\n\nR/Python Package Access",
+    "crumbs": [
+      "Welcome to Posit Team User Training!"
+    ]
+  },
+  {
+    "objectID": "index.html#agenda",
+    "href": "index.html#agenda",
+    "title": "Welcome to Posit Team User Training!",
+    "section": "Agenda",
+    "text": "Agenda\nThis workshop will loosely follow the model of a typical data science project as described in R for Data Science:\n\n\n\n\n\n\nFigure 1: Data science project model\n\n\n\nWe’ll begin with some workshop logistics and an overview of Posit Team. The remainder of the workshop will follow the above Data (focus on Import), Understand, and Communicate data science model. A full agenda is listed below:\n\nOverview and Setup\n\nAccessing the workshop environment\nPosit Team overview\nUser configuration\n\nData\n\nMethods for reading data into Posit Team\nPosit Professional ODBC Drivers\nExercise: Extract-Transform-Load (ETL) workflow\n\nUnderstand\n\nCreating a simple model\nSaving and serving a model\nExercise: Create, save, and serve a model using pins, vetiver, and FastAPI\n\nCommunicate\n\nShiny\nExercise: Publish a Shiny for Python application to Posit Connect\nExercise: Publish a Shiny for R application to Posit Connect using Git-backed deployment to Posit Connect\n\nBonus Content\n\nConnect API\nconnectwidgets\nJob Launcher in Posit Workbench",
+    "crumbs": [
+      "Welcome to Posit Team User Training!"
+    ]
+  },
+  {
+    "objectID": "posit-team-overview.html",
+    "href": "posit-team-overview.html",
+    "title": "2  Posit Team Overview",
+    "section": "",
+    "text": "2.1 Posit Team\nPosit Team is a bundled offering of Posit’s three professional data science tools including Posit Workbench, Posit Connect, and Posit Package Manager. These tools are designed to fully support end-to-end data science workflows in both R and Python from code development, sharing data products, and managing environments.\nA quick overview of Posit Team and which development tools, supported content for hosting, and repository options are shown in Figure 2.2.",
+    "crumbs": [
+      "Overview and Setup",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Posit Team Overview</span>"
+    ]
+  },
+  {
+    "objectID": "posit-team-overview.html#posit-team",
+    "href": "posit-team-overview.html#posit-team",
+    "title": "2  Posit Team Overview",
+    "section": "",
+    "text": "Figure 2.2: Posit Team Features\n\n\n\n\n2.1.1 Posit Workbench\nData scientist leverage Posit Workbench to create insights (Figure 2.1). As the name implies, Posit Workbench contains numerous “tools” for insight development, including a variety of integrated development environments (IDEs) to choose from. Currently, Posit Workbench supports Jupyter Notebook, Jupyter Lab, RStudio Pro and Visual Studio Code (Figure 2.3).\n\n\n\n\n\n\nFigure 2.3: Posit Workbench - New session options\n\n\n\nThe IDEs included within Posit Workbench will look and feel very similar to the versions that are freely available to the public. This is by design to ensure users feel at home within Posit Workbench on day one. There are, however, a few features that you will only find within Posit Workbench which will be discussed in the next section.\n\n2.1.1.1 Features unique to Posit Workbench\nMany of the features that make Posit Workbench appealing for data science teams are tailored to system administrators, IT, and security teams including load balancing, cluster integration, authentication, session management, and security. From the users perspective, there are a handful of features that are worth knowing about which you’ll only find within Posit Workbench including:\n\nFlexible use of multiple versions of R and Python on the same server.\nProject sharing (RStudio Pro) for easy collaboration within work groups.\nLaunch long-running scripts (R and Python) in new sessions independent of your current working session.\n\n\n\n\n2.1.2 Posit Connect\nData scientists leverage Posit Connect to share insights with others (Figure 2.1). These insights can take many forms including interactive web applications, static reports, application programming interfaces (APIs), and more. Once the insights have been published to Connect (possibly from Posit Workbench), the publisher has full control over sharing, access, and content execution.\n\n2.1.2.1 Publishing Options\n\n\n\n\n\n\nFigure 2.4: Publishing methods\n\n\n\nUsers have multiple options for publishing content to Posit Connect, summarized in Figure 2.4.\n\nCommand Line: The rsconnect-python package contains a command line interface (CLI) tools for publishing content from the command line/terminal. During the publishing process, the user’s environment with automatically be captured and replicated on the Posit Connect server. This method is available anywhere you have access to a terminal/command line, including Jupyter Lab and VS Code.\nPush-Button Deployment: Available within RStudio and Jupyter Notebooks (within Posit Workbench). During the publishing process, the user’s environment with automatically be captured and replicated on the Posit Connect server.\nR: The rsconnect R package makes it easy to publish content to Posit Connect from R.\nGit: Deploy content directly from a git repository. In this method, the user needs to supply a companion manifest.json file which includes information about the environment needed to run the content on Posit Connect.\n\n\n\n\n2.1.3 Posit Package Manager\nData scientists leverage Posit Package Manager to access R and Python packages from repositories managed and hosted from within your organization. Often, Posit Package Manager is considered a “behind the scenes” tool, but it’s importance should not be underestimated. Users of Posit Package Manager often find that their package installs and development environments “just work” without any prior configuration. However, it’s still important that users know how to install packages from an instance of Posit Package Manager.",
+    "crumbs": [
+      "Overview and Setup",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Posit Team Overview</span>"
+    ]
+  },
+  {
+    "objectID": "user-configuration.html",
+    "href": "user-configuration.html",
+    "title": "3  User Configuration",
+    "section": "",
+    "text": "3.0.1 Configuring your R environment to use Posit Package Manager\nBefore making any configurations, you should first check which repositories you’re currently using. Within an active R session, you can use the options function to explore which repositories (“repos”) your currently using.\nIn this example, you can see the output is showing Posit’s Public Package Manager as the default repository for R packages. Specifically, we are pointing to a CRAN repository hosted within package manager.\nTo configure R to use Posit Package Manager as it’s CRAN repository, set the repos option to use the repository URL. The repository URL can be found within the SETUP page within Posit Package Manager.\nSince this configuration is done within an active R session, you’ll need to repeat these steps anytime you open a new session. Consider adding this code to your .Rprofile file to maintain the repository configuration across R sessions.\nYou can also set the repository URL using the RStudio IDE by navigating to Tools –&gt; Global Options –&gt; Packages, and adding the repository URL to the “Primary CRAN repository” text box.",
+    "crumbs": [
+      "Overview and Setup",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>User Configuration</span>"
+    ]
+  },
+  {
+    "objectID": "user-configuration.html#configure-a-posit-connect-instance-for-publishing",
+    "href": "user-configuration.html#configure-a-posit-connect-instance-for-publishing",
+    "title": "3  User Configuration",
+    "section": "3.1 Configure a Posit Connect instance for publishing",
+    "text": "3.1 Configure a Posit Connect instance for publishing\nPublishing your data products to Posit Connect is arguably the most valuable feature of Posit Team. Configuring a Posit Connect instance will vary depending on your development environment and publishing method (see Figure 2.4). For this workshop, we will cover push-button deployment via the RStudio IDE and CLI publishing. Additional details for configuring a Posit Connect instance can be found on the Posit Connect User Guide.\n\n3.1.1 Push Button Deployment (RStudio)\nNavigate to Tools –&gt; Global Options –&gt; Publishing. In some cases, the Posit Connect will already be configured for you. To add a new Posit Connect instance, click the Connect button and follow the instructions. The only thing needed is the Posit Connect URL which can be supplied by your System Administrator.\n\n\n\n\n\n\nFigure 3.2: RStudio - Configure Posit Connect Instance - Step1\n\n\n\n\n\n\n\n\n\nFigure 3.3: RStudio - Configure Posit Connect Instance - Step 2",
+    "crumbs": [
+      "Overview and Setup",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>User Configuration</span>"
+    ]
+  },
+  {
+    "objectID": "user-configuration.html#cli-publishing",
+    "href": "user-configuration.html#cli-publishing",
+    "title": "3  User Configuration",
+    "section": "3.2 CLI Publishing",
+    "text": "3.2 CLI Publishing\nTo check currenctly connected Posit Connect servers, you can use the rsconnect-python CLI tool and run the following command from the terminal/command line:\nrsconnect add list \nTo add a new Posit Connect instance, you’ll need the Posit Connect server URL as well as an API key (instructions for adding an API can be found here). You also need to give your Posit Connect instance a name.\nrsconnect add \\\n    --server https://my.connect.server/ \\\n    --name myServer \\\n    --api-key myconnectapikey",
+    "crumbs": [
+      "Overview and Setup",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>User Configuration</span>"
+    ]
+  },
+  {
+    "objectID": "data.html",
+    "href": "data.html",
+    "title": "4  Data",
+    "section": "",
+    "text": "4.1 Data Import Options\nData lives in a variety of locations in a variety of formats, and as such, there are many options for bringing your data into your development environment. Below are few common options for accessing your data:\nOf the four options listed in Figure 4.1, Databases are the most complex. In the next section, we will give you a primer on working with databases.",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data</span>"
+    ]
+  },
+  {
+    "objectID": "data.html#data-import-options",
+    "href": "data.html#data-import-options",
+    "title": "4  Data",
+    "section": "",
+    "text": "Figure 4.1: Data import options",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data</span>"
+    ]
+  },
+  {
+    "objectID": "data.html#a-primer-on-databases",
+    "href": "data.html#a-primer-on-databases",
+    "title": "4  Data",
+    "section": "4.2 A Primer on Databases",
+    "text": "4.2 A Primer on Databases\nDatabases are managed by DataBase Management Systems (DBMSs). There exists a growing list of DBMSs for databases hosted on-prem (client server), in the Cloud, or in-process. Below are a few common DBMSs:\n\n\n\n\n\n\nFigure 4.2: Database Management Systems\n\n\n\nIn R, there exists an interface layer between the R programming language and the DBMS. This is know as the DataBase Interface (DBI). To make a connection to a DBMS from R, you use the DBI::dbConnect() function in combination with an R package tailored for the DBMS you are connecting to. For example, here is some R code to connect to a PostgreSQL database:\ncon &lt;- DBI::dbConnect(\n  RPostgres::Postgres(), \n  hostname = \"databases.mycompany.com\", \n  port = 1234\n)\nIn Python, the database interface layer is an API known as the Python DataBase API (DB-API). Most packages and modules in Python used to access DBMSs are often designed to be DB-API compliant including sqlite3, psycopg2, and mysql-connector-python. For example, here is some Python code to connect to a SQLite database:\ncon = sqlite3.connect('example.db')\nWith so many DBMS-specific connectors, it can be overwhelming to remember which package/function to use. As such, most DBMSs will also provide a connector known as an Open DataBase Connectivity (ODBC) driver. ODBC is a universal DBMS interface, which means the same ODBC functions will work with any database. For example, here is how to make an ODBC connection to a PostgreSQL database in R and Python:\n# In R\nlibrary(DBI)\nlibrary(odbc)\n\ncon &lt;- DBI::dbConnect(odbc::odbc(),\n  driver = \"PostgreSQL Driver\",\n  database = \"test_db\",\n  UID    = Sys.getenv(\"DB_USER\"),\n  PWD    = Sys.getenv(\"DB_PASSWORD\"),\n  host = \"localhost\",\n  port = 5432)\n# In Python\nimport pyodbc\n\ncon = pyodbc.connect(\n  driver = 'PostgreSQL',\n  database = 'test_db',\n  server = 'localhost',\n  port = 5432, \n  uid = os.getenv('DB_USER'),\n  pwd = os.getenv('DB_PASSWORD')\n)",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data</span>"
+    ]
+  },
+  {
+    "objectID": "data.html#posits-professional-odbc-drivers",
+    "href": "data.html#posits-professional-odbc-drivers",
+    "title": "4  Data",
+    "section": "4.3 Posit’s Professional ODBC Drivers",
+    "text": "4.3 Posit’s Professional ODBC Drivers\nNot all DBMSs will provide an ODBC Driver. This can be a major blocker for users attempting to import data into their development environment. To overcome this limitation, Posit has created custom ODBC drivers that work with many of the popular DBMSs used today, including:\n\n\n\n\n\n\nFigure 4.3: Posit’s Professional ODBC Drivers\n\n\n\nMake sure to speak with your Posit Team system administrator if you currently use any of the above databases.",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data</span>"
+    ]
+  },
+  {
+    "objectID": "exercise-ETL.html",
+    "href": "exercise-ETL.html",
+    "title": "5  Exercise: ETL",
+    "section": "",
+    "text": "5.1 Step 1 - Extract Data from DuckDB\nThe workshop environment comes with a DuckDB, which can be be found here: duckdb/database/demo-datasets.db. Within the DuckDB database is the COVID dataset described in . The first step is to make a connection to the DuckDB and read in the COVID data using R.\nAll of this R code should be added to a Quarto document within the RStudio IDE on Posit Workbench.",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Exercise: ETL</span>"
+    ]
+  },
+  {
+    "objectID": "exercise-ETL.html#step-1---extract-data-from-duckdb",
+    "href": "exercise-ETL.html#step-1---extract-data-from-duckdb",
+    "title": "5  Exercise: ETL",
+    "section": "",
+    "text": "5.1.1 Load Necessary Packages\nlibrary(DBI)\nlibrary(dplyr)\nlibrary(pins)\nlibrary(duckdb)\nlibrary(dbplyr)\n\n\n5.1.2 Connect to DuckDB\nFor this connection, we are using the DBI package in combination with the duckDB package.\ncon &lt;- DBI::dbConnect(duckdb::duckdb(), dbdir = \"/data/duckdb/database/demo-datasets.db\")\nAfter the connection (con) has been made, you can explore the various dataset contained within the DuckDB by running:\ndbListTables(con)\n\n\n5.1.3 Extract/Transform Covid Data\nLet’s use the dplyr::tbl() function to extract the Covid data from the DuckDB connection. The tbl() makes a “pointer” to the COVID data within the DuckDB. To pull the data into our active R session and store it in memory, we need to use the dplyr::collect() function:\ncovid &lt;- tbl(con, \"covid\") |&gt; \n  # Read into memory\n  collect()\nIn order to save compute resources in your R session, it’s suggested to do any type of cleaning and filtering of the data before calling the collect() function. Therefore, let’s amend the previous code and insert a transformation step before the collect() function to filter our data for a specific state/province. Feel free to substitute “Maryland” in the code below for another state/province:\ncovid &lt;- tbl(con, \"covid\") |&gt;\n  # Filter for a state/provice\n  filter(province_state == \"Maryland\") |&gt;\n  # Read into memory\n  collect()",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Exercise: ETL</span>"
+    ]
+  },
+  {
+    "objectID": "exercise-ETL.html#step-2---load-data-to-posit-connect",
+    "href": "exercise-ETL.html#step-2---load-data-to-posit-connect",
+    "title": "5  Exercise: ETL",
+    "section": "5.2 Step 2 - Load Data to Posit Connect",
+    "text": "5.2 Step 2 - Load Data to Posit Connect\nNow that the data has been transformed (filtered for a specific state/province), it’s time to load the data so that other users/content can access it. For this exercise, we are going to use the popular pins package to load the data to Posit Connect.\nPinning an object to Posit Connect is a two step process. The first step is to define Posit Connect as our pinning board:\nboard &lt;- pins::board_connect()\nFor this workshop, the board_connect() function should work without supplying any arguments. When running this command in your own environment, you may need to do some configuration which is described here.\nThe second step is to write the data to Posit Connect as a pin. Before running the code below, take note of what your username is on the Posit Connect server. In this example, I’m using the placeholder name of publisher1, but be sure to replace this with your username!\npins::pin_write(board = board, x = covid, name = \"publisher1/covid_data\", type = \"csv\")",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Exercise: ETL</span>"
+    ]
+  },
+  {
+    "objectID": "exercise-ETL.html#step-3---publish-workflow-and-automate",
+    "href": "exercise-ETL.html#step-3---publish-workflow-and-automate",
+    "title": "5  Exercise: ETL",
+    "section": "5.3 Step 3 - Publish Workflow and Automate",
+    "text": "5.3 Step 3 - Publish Workflow and Automate\nAlthough the COVID dataset is static, from early 2020 to mid 2023, it was being updated daily. If the data changes, you’ll need to re-run the ETL workflow described above to ensure the pinned dataset reflects the latest data. This is a manual process that we can automate with the help of Posit Team!\nFirst, click the blue deployment button at the top of the RStudio IDE:\n\n\n\n\n\n\nFigure 5.2: RStudio - Deployment Button\n\n\n\nIn the subsequent pop-up window, select Posit Connect. Importantly, to re-run the quarto document on the Connect server, we need to publish document with source code:\n\n\n\n\n\n\nFigure 5.3: RStudio - Publish Options\n\n\n\nThe last step is to define the files you want to send to Connect, the Connect instance you want to publish to, and the title of the content. If everything looks good, go ahead and click Publish!\n\n\n\n\n\n\nFigure 5.4: RStudio - Publish to Posit Connect\n\n\n\nOnce hosted on Connect, let’s set the Quarto document to re-run on a daily basis. We accomplish this by selecting the Schedule tab at the top. In the below configuration, the Quarto document will run every day at 9:48 am (America - New York time) and will ensure the pinned dataset is always up-to-date!\n\n\n\n\n\n\nFigure 5.5: Job Scheduling on Posit Connect\n\n\n\nYou’ll also notice at the bottom we have two options to publish the output after it is generated and send email after update. The first option ensure that the content on Posit Connect is updated after it’s scheduled to run. This is important if your content has any plots or tables that need to be updated. The second option allows you to send an email to users with a direct link to the content on Posit Connect. This is a great option to deliver insights for those that love to live in their email inbox 😁.",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Exercise: ETL</span>"
+    ]
+  },
+  {
+    "objectID": "modeling.html",
+    "href": "modeling.html",
+    "title": "6  Modeling with Posit Team",
+    "section": "",
+    "text": "6.1 The Machine Learning Life Cycle\nAs seen in Figure 6.1, all models start with data (very top of the cycle). The next step is to prepare the data for modeling, which requires cleaning and transforming to ensure the data is in a format that is usable for machine learning. Which tool(s) you use to create an ML model is completely up to you, but here’s a short list of common R/Python tools:\nRarely is the creation of a model a one time event. As data changes and the ML tools evolve, models will need to be updated and subsequently deployed into production. It’s also important that the deployed model demonstrates high performance compared to prior versions and other models.",
+    "crumbs": [
+      "Understand",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Modeling with Posit Team</span>"
+    ]
+  },
+  {
+    "objectID": "modeling.html#the-machine-learning-life-cycle",
+    "href": "modeling.html#the-machine-learning-life-cycle",
+    "title": "6  Modeling with Posit Team",
+    "section": "",
+    "text": "Figure 6.1: Machine Learning Life Cycle\n\n\n\n\n\nPackages, Libraries, and Frameworks for ML Model Creation\n\n\nR\nPython\n\n\n\n\ntidymodels\nSciKit-Learn\n\n\ncaret\nKeras\n\n\n\nPyTorch\n\n\n\nTensorFlow",
+    "crumbs": [
+      "Understand",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Modeling with Posit Team</span>"
+    ]
+  },
+  {
+    "objectID": "modeling.html#mlops-with-vetiver",
+    "href": "modeling.html#mlops-with-vetiver",
+    "title": "6  Modeling with Posit Team",
+    "section": "6.2 MLOps with vetiver",
+    "text": "6.2 MLOps with vetiver\nGiven the iterative nature of the ML life cycle, there exists tools explicitly designed to assist with the deployment and maintenance (i.e. “operations”) of ML models. This practice is known as Machine Learning Operations, or MLOps. Posit has created a MLOps framework for both R and Python known as vetiver. vetiver was designed to fill the tool gap in the ML life cycle around versioning, deploying, and monitoring model performance.\n\n6.2.1 vetiver workflow with Posit Team\n\n\n\n\n\nflowchart LR\n  A(Convert model to\\nvetiver model) --&gt; B(Pin vetiver model\\nto Posit Connect)\n  B --&gt; C(Serve vetiver model\\nas an API)\n  C --&gt; D(Make a prediction!)\n\n\n\n\n\n\nA typical vetiver workflow within Posit Team, depicted in the flow diagram above, consists of converting a model to a vetiver model, saving it to Posit Connect as a pin, and then serving it as an API. This workflow is shown below in both Python and R. Be sure to substitute “your_name” with your Posit Connect username:\n\nPythonR\n\n\nimport pins\nfrom vetiver import VetiverModel\nfrom vetiver.data import mtcars\nfrom sklearn.linear_model import LinearRegression\n\n# Create Model\nmodel = LinearRegression().fit(mtcars.drop(columns=\"mpg\"), mtcars[\"mpg\"])\n\n# Create Vetiver Model\nv = VetiverModel(model, model_name = \"your_name/cars_linear\", \n                 prototype_data = mtcars.drop(columns=\"mpg\"))\n\n# Save Model as pin\nboard = pins.board_connect(allow_pickle_read = True)\nvetiver_pin_write(board, v)\n\n\nlibrary(vetiver)\nlibrary(pins)\n\n# Create Model\ncars_lm &lt;- lm(mpg ~ ., data = mtcars)\n\n# Create Vetiver Model\nv &lt;- vetiver_model(cars_lm, \"your_name/cars_linear\")\n\n# Save Model as pin\nboard &lt;- board_connect()\nvetiver_pin_write(board, v)\n\n\n\nNow that we have a model saved to Posit Connect, we can use vetiver to serve it as an API. By default, vetiver will use FastAPI for python models, and plumber for R models. Creating APIs is a cinch with vetiver:\n\nPythonR\n\n\nfrom vetiver import deploy_rsconnect\nfrom rsconnect.api import RSConnectServer\nimport os\n\n# Define Connect Server\nconnect_server = RSConnectServer(\n    url=os.getenv(\"CONNECT_SERVER\"), \n    api_key=os.getenv(\"CONNECT_API_KEY\")\n)\n\n# Convert pinned model on Connect to API\ndeploy_rsconnect(board = board, \n                 pin_name = \"you_name/cars_linear\", \n                 connect_server = connect_server)\n\n\nlibrary(plumber)\nlibrary(rsconnect)\n\n# Convert pinned model on Connect to API\nvetiver_deploy_rsconnect(board = board, \n                         name = \"your_name/cars_linear\")\n\n\n\nIn some cases, you may need to add some additional arguments to these functions (e.g., Posit Connect server URL and API key). Additional details can be found on the Posit Connect user guide.\n\n\n6.2.2 Interacting with APIs on Posit Connect\nHuman interactions with an API usually requires a visualization layer. When creating an API for your model with vetiver, the default visual documentation for Plumber is swagger, and for FastAPI it’s RapiDoc. Below is an example of the RapiDoc documentatin of a FastAPI hosted on Posit Connect:\n\n\n\n\n\n\nFigure 6.2: RapiDoc documentation for a FastAPI hosted on Posit Connect\n\n\n\nThis example API uses a model to predict the number of COVID cases given a specific day of the year. You will create a similar API in the next exercise! The prediction is generated by sending a POST request to the API with specific parameters. In this case, there is only one parameter, the day of the year (DayOfYear). RapiDoc allows you to try out the API. In the image below, we asked the API to return the prediction of the number of COVID cases on day 46 of the year. At the bottom, you can see the response of approximately 1,033 cases:\n\n\n\n\n\n\nFigure 6.3: Interacting with RapiDoc\n\n\n\nYou can also interact with APIs programmatically. In the code below, we’ll show you how to query an API using vetiver hosted on Posit Connect using both R and Python. Full instructions (including additional authentication options) can be found here.\n\nPythonR\n\n\nfrom vetiver.server import predict, vetiver_endpoint\n\n# Define the API endpoint\nendpoint = vetiver_endpoint(\n    f\"https://connect.example.com/content/{APP_ID}/predict\"\n)\n\n# If API has restricted access, you'll need to supply an API Key\napi_key=os.getenv(\"CONNECT_API_KEY\")\n\n# Predict using new data!\nh = {\"Authorization\": f\"Key {api_key}\"}\nresponse = predict(endpoint=endpoint, data=new_data, headers=h)\n\n\n# Define the API endpoint\nendpoint &lt;- vetiver_endpoint(\n  \"https://connect.example.com/content/$APP_ID/predict\")\n\n# If API has restricted access, you'll need to supply an API Key\napiKey &lt;- Sys.getenv(\"CONNECT_API_KEY\")\n\n# Predict using new data!\npredict(\n  endpoint,\n  new_data,\n  httr::add_headers(Authorization = paste(\"Key\", apiKey)))",
+    "crumbs": [
+      "Understand",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Modeling with Posit Team</span>"
+    ]
+  },
+  {
+    "objectID": "exercise-model.html",
+    "href": "exercise-model.html",
+    "title": "7  Exercise: Modelling",
+    "section": "",
+    "text": "7.1 Step 1 - Create a Model\nThe COVID dataset contains a column (new_cases) that shows how many new cases of COVID were reported on a specific day. There is seasonality for certain infections (e.g., influenza and RSV), and we can use this COVID dataset to determine if the same applies to COVID. In other words:\nTo highlight the cross-language functionality of Posit Team, we will create this model using Python! There are so many amazing packages and modules available in Python for creating models including Tensorflow, Keras, and SciKit-Learn. For this workshop we are going to create a simple linear regression model using SciKit-Learn.",
+    "crumbs": [
+      "Understand",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Exercise: Modelling</span>"
+    ]
+  },
+  {
+    "objectID": "exercise-model.html#step-1---create-a-model",
+    "href": "exercise-model.html#step-1---create-a-model",
+    "title": "7  Exercise: Modelling",
+    "section": "",
+    "text": "Can we predict new cases of COVID given a specific day of the year?\n\n\n\n7.1.1 Load Necessary Packages\nimport pandas as pd\nimport numpy as np\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.pipeline import make_pipeline\nfrom sklearn.preprocessing import PolynomialFeatures\nimport matplotlib.pyplot as plt\n\n\n7.1.2 Read in Pinned COVID Data\nReminder: You’ll need to replace your_name with your Posit Connect username in all subsequent code blocks.\nimport pins\n\nboard = pins.board_connect(allow_pickle_read=True)\n\ncovid = board.pin_read(\"your_name/covid_data\")\n\n\n7.1.3 Transform Data\nBefore we can model the COVID data with SciKit-Learn, we need to transform it to a format that is conducive to modeling. In the next steps we will convert the date colum to a date class, engineer a new feature called DayOfYear, and select only the columns of interest (DayOfYear and new_cases).\n# Convert to date class\ncovid[\"date\"] = pd.to_datetime(covid[\"date\"])\n\n# Feature engineering: Extracting day of the year as a feature\ncovid[\"DayOfYear\"] = covid[\"date\"].dt.dayofyear\n\n# Extract columns of interest\ndf = covid[[\"DayOfYear\", \"new_cases\"]]\n\n\n7.1.4 Train Linear Regression Model\n# Create and train a linear regression model\ncovid_model = make_pipeline(PolynomialFeatures(4), LinearRegression()).fit(df.drop(columns=\"new_cases\"), df[\"new_cases\"])",
+    "crumbs": [
+      "Understand",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Exercise: Modelling</span>"
+    ]
+  },
+  {
+    "objectID": "exercise-model.html#step-2---make-predictions",
+    "href": "exercise-model.html#step-2---make-predictions",
+    "title": "7  Exercise: Modelling",
+    "section": "7.2 Step 2 - Make Predictions",
+    "text": "7.2 Step 2 - Make Predictions\nLet’s use our new model to make prediction of how many new cases of COVID there will be given a day of the year. We’ll visualize these predictions using matplotlib.\n\n\n\n\n\n\nWarning\n\n\n\nYour predictions/plots may look different depending on which state/province you selected in the previous exercise.\n\n\n# Make predictions\ncovid_pred = covid_model.predict(df.drop(columns=\"new_cases\"))\n\n# Visualize the results\nplt.scatter(df.drop(columns=\"new_cases\"), df[\"new_cases\"], color='black', label='Actual')\nplt.scatter(df.drop(columns=\"new_cases\"), covid_pred, color='blue', s=2, label='Predicted')\nplt.xlabel('Day of Year')\nplt.ylabel('Number of Cases')\nplt.legend()\nplt.show()\n\n\n\n\n\n\nFigure 7.2: New cases of COVID for Maryland",
+    "crumbs": [
+      "Understand",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Exercise: Modelling</span>"
+    ]
+  },
+  {
+    "objectID": "exercise-model.html#step-3---save-and-serve-model",
+    "href": "exercise-model.html#step-3---save-and-serve-model",
+    "title": "7  Exercise: Modelling",
+    "section": "7.3 Step 3 - Save and Serve Model",
+    "text": "7.3 Step 3 - Save and Serve Model\nIn the next steps, we’ll convert our linear regression model to a vetiver model and subsequently save it as a pin to Posit Connect. We’ll then use the pinned model to create a FastAPI that will serve our model so we can interact with it.\n\n7.3.1 Create a Vetiver Model\nfrom vetiver import VetiverModel\n\n# Create Vetiver model\nv = VetiverModel(covid_model, model_name = \"publisher1/covid_model\", prototype_data=df.drop(columns=\"new_cases\"))\n\n\n7.3.2 Save Model as a Pin to Posit Connect\nfrom vertiver import vetiver_pin_write\n\n# Save model as pin to Posit Connect. The \"board\"\" was defined above\nvetiver_pin_write(board, v)\n\n\n7.3.3 Serve Model as a FastAPI on Posit Connect\nIn the below code, we will use the pinned model to serve a FastAPI. For our workshop environment, the CONNECT_SERVER and CONNECT_API_KEY variables are already present in your environment, and you’ll use the os package to retrieve them.\nfrom vetiver import VetiverAPI, deploy_rsconnect\nfrom rsconnect.api import RSConnectServer\n\n# Define Connect Server\nconnect_server = RSConnectServer(\n    url=os.getenv(\"CONNECT_SERVER\")\n    api_key=os.getenv(\"CONNECT_API_KEY\"))\n    \n# Deploy FastAPI    \ndeploy_rsconnect(board = board, \n                 pin_name = \"publisher1/covid_model\", \n                 connect_serve==connect_server)",
+    "crumbs": [
+      "Understand",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Exercise: Modelling</span>"
+    ]
+  },
+  {
+    "objectID": "exercise-model.html#step-4---interact-with-fastapi",
+    "href": "exercise-model.html#step-4---interact-with-fastapi",
+    "title": "7  Exercise: Modelling",
+    "section": "7.4 Step 4 - Interact with FastAPI",
+    "text": "7.4 Step 4 - Interact with FastAPI\nWith the FastAPI now deployed to Posit Connect, we can programmatically query the API which will return the predicted number of new COVID cases given a specific day of the year. Before we query the API, there are a few variable we should set including the endpoint as well as the query parameters:\nimport os\nimport pandas as pd\nfrom vetiver.server import predict, vetiver_endpoint\n\n# Set vetiver endpoing (URL can be found on Posit Connect)\n#  Might need to add \"predict\" to the end of the URL\nendpoint = vetiver_endpoint(\"https://connectexample.posit.co/cnct/content/{APP_ID}/predict\")\n\n# Define API key (if not done already)\napi_key = os.getenv(\"CONNECT_API_KEY\")\n\n# Define query parameters. Example: 44th day of the year\nparams = pd.DataFrame({'DayOfYear': [44]})\n\n# Query API!\nh = {\"Authorization\": f\"Key {api_key}\"}\npredict(endpoint=endpoint, data=params, headers=h)",
+    "crumbs": [
+      "Understand",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Exercise: Modelling</span>"
+    ]
+  },
+  {
+    "objectID": "shiny.html",
+    "href": "shiny.html",
+    "title": "8  Shiny",
+    "section": "",
+    "text": "8.1 What’s in a Shiny App?\nMost shiny applications have 4 components:\nBelow is the code for a simple shiny application, written in both R and Python:",
+    "crumbs": [
+      "Communicate",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Shiny</span>"
+    ]
+  },
+  {
+    "objectID": "shiny.html#whats-in-a-shiny-app",
+    "href": "shiny.html#whats-in-a-shiny-app",
+    "title": "8  Shiny",
+    "section": "",
+    "text": "Header: The header is usually at the very top of the shiny application. This is a useful space for things that need to be executed as soon as someone opens your shiny application such as reading in any data or packages.\nUser Interface (UI): The UI is where design the visual layout of your application. Specifically where to put your inputs and outputs.\nServer Function: The server function tells shiny how to build the various outputs.\nRun app: This is where you combine the UI and Server function into a single shiny application.\n\n\n\nPythonR\n\n\n# Header\nfrom shiny import *\n\n# UI\napp_ui = ui.page_fluid(\n    ui.input_slider(\"n\", \"N\", 1, 100, 40),\n    ui.output_text_verbatim(\"txt\"),\n)\n\n# Server Function\ndef server(input, output, session):\n    @output\n    @render.text\n    def txt():\n        return f\"The value of n*2 is {input.n() * 2}\"\n\n# Run App\napp = App(app_ui, server)\n\n\n# Header\nlibrary(shiny)\n\n# UI\nui &lt;- fluidPage(\n  sliderInput(\"n\", \"N\", 1, 100, 40),\n  textOutput(\"txt\")\n  \n)\n\n# Server Function\nserver &lt;- function(input, output) {\n  output$txt &lt;- renderText({\n    paste0(\"The value of n*2 is: \", input$n * 2)\n  })\n}\n\n# Run App\nshinyApp(ui = ui, server = server)",
+    "crumbs": [
+      "Communicate",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Shiny</span>"
+    ]
+  },
+  {
+    "objectID": "shiny.html#incorporating-shiny-into-your-workflow",
+    "href": "shiny.html#incorporating-shiny-into-your-workflow",
+    "title": "8  Shiny",
+    "section": "8.2 Incorporating Shiny into your Workflow",
+    "text": "8.2 Incorporating Shiny into your Workflow\n\n\n\n\n\n\nFigure 8.1: Shiny application best practices\n\n\n\nIt can be tempting to incorporate your entire data science workflow into your shiny application. This often leads to bloated applications that are frustratingly slow (see left side of Figure 8.1). Instead, it’s recommended to decouple the “computationally heavy” parts of your workflow from your shiny application where possible (see right side of Figure 8.1). Consider the two examples below (both of which we’ve discussed in previous chapters):\n\nIf your shiny application relies on large datasets, make sure to only read in the data required for the application. Also consider pre-processing your data before reading it into the shiny application.\nIf your shiny application leverages a machine learning model, consider training/tuning your model outside of shiny and serving it as an API.\n\nBy keeping the steps of your workflow independent from each other, you can dramatically improve your shiny application’s performance and simplify the underlying code. These are two big steps for making your shiny applications more production grade!",
+    "crumbs": [
+      "Communicate",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Shiny</span>"
+    ]
+  },
+  {
+    "objectID": "exercise-shiny-py.html",
+    "href": "exercise-shiny-py.html",
+    "title": "9  Exercise: Shiny for Python",
+    "section": "",
+    "text": "9.1 Step 1 - Set the Stage\nBefore we define our Shiny app user interface and server function, we first need to import the necessary packages and define some variables.",
+    "crumbs": [
+      "Communicate",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Exercise: Shiny for Python</span>"
+    ]
+  },
+  {
+    "objectID": "exercise-shiny-py.html#step-1---set-the-stage",
+    "href": "exercise-shiny-py.html#step-1---set-the-stage",
+    "title": "9  Exercise: Shiny for Python",
+    "section": "",
+    "text": "9.1.1 Import Necessary Packages\nfrom shiny import App, render, ui\nimport os\nimport vetiver\nimport pandas as pd\n\n\n9.1.2 Set Variables\nThe primary variable we need to set is the vetiver endpoint. You’ll need to supply the API URL which can be found on Posit Connect. The other variable is the Posit Connect API key, which is only needed if your API requires authenticated access.\n# Define endpoint for API and key\nendpoint = vetiver.vetiver_endpoint(\"https://connectexample.posit.co/cnct/content/{APP_ID}/predict\")\n\napi_key = os.getenv(\"CONNECT_API_KEY\")",
+    "crumbs": [
+      "Communicate",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Exercise: Shiny for Python</span>"
+    ]
+  },
+  {
+    "objectID": "exercise-shiny-py.html#step-2---create-user-interface",
+    "href": "exercise-shiny-py.html#step-2---create-user-interface",
+    "title": "9  Exercise: Shiny for Python",
+    "section": "9.2 Step 2 - Create User Interface",
+    "text": "9.2 Step 2 - Create User Interface\nAs shown in Figure 9.2, our application only has an input date, and output text.\n# User Interface\napp_ui = ui.page_fluid(\n    ui.input_date(\"day\", \"Select Date:\", value=\"2021-01-01\"),\n    ui.output_text_verbatim(\"txt\")\n)",
+    "crumbs": [
+      "Communicate",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Exercise: Shiny for Python</span>"
+    ]
+  },
+  {
+    "objectID": "exercise-shiny-py.html#step-3---create-server-function",
+    "href": "exercise-shiny-py.html#step-3---create-server-function",
+    "title": "9  Exercise: Shiny for Python",
+    "section": "9.3 Step 3 - Create Server Function",
+    "text": "9.3 Step 3 - Create Server Function\nThe goal of the server function is to query the FastAPI and use the API response to create the text output. After the server function, be sure to call the App function to bring together our UI and server function into a single app object!\n# Server Function\ndef server(input, output, session):\n    @render.text\n    def txt():\n       \n        # Parameters to be included in the query string\n        #  Convert date to number of year\n        params = pd.DataFrame({\n            'DayOfYear': [input.day().strftime(\"%j\")]\n        })\n\n        # If needed, add authorization\n        h = {\"Authorization\": f\"Key {api_key}\"}\n\n        # Make a prediction\n        response = vetiver.predict(endpoint=endpoint, data=params, headers=h).at[0, \"predict\"].round()\n\n        # Return message\n        return f\"Predicted number of COVID cases: {response}\"\n      \n# Create Shiny App\napp = App(app_ui, server)",
+    "crumbs": [
+      "Communicate",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Exercise: Shiny for Python</span>"
+    ]
+  },
+  {
+    "objectID": "exercise-shiny-py.html#step-4---run-the-application-on-posit-workbench",
+    "href": "exercise-shiny-py.html#step-4---run-the-application-on-posit-workbench",
+    "title": "9  Exercise: Shiny for Python",
+    "section": "9.4 Step 4 - Run the Application on Posit Workbench",
+    "text": "9.4 Step 4 - Run the Application on Posit Workbench\nAccess the terminal within VS Code (click the three line icon in the top left corner followed by Terminal –&gt; New Terminal). The workshop environment is already configured with the shiny CLI tool which we can use to run the shiny application.\nTo run the shiny application, make sure you’ve saved your application as app.py and you know where it’s located in your file system, then type the following command into the terminal:\nshiny run /path/to/app.py\nYou’ll see a link appear in the terminal that you can click, or you can use the Posit Workbench VS Code extension (red arrow in Figure 9.3) to view actively running “proxied servers.” In the below example, you can see two servers running. The bottom server is actively running our shiny app!\n\n\n\n\n\n\nFigure 9.3: Posit Workbench VS Code Extension",
+    "crumbs": [
+      "Communicate",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Exercise: Shiny for Python</span>"
+    ]
+  },
+  {
+    "objectID": "exercise-shiny-py.html#step-5---publish-shiny-application-to-posit-connect",
+    "href": "exercise-shiny-py.html#step-5---publish-shiny-application-to-posit-connect",
+    "title": "9  Exercise: Shiny for Python",
+    "section": "9.5 Step 5 - Publish Shiny Application to Posit Connect",
+    "text": "9.5 Step 5 - Publish Shiny Application to Posit Connect\nIn the last step, we’ll show how to use the rsconnect-python CLI tool to publish our shiny for python application to Posit Connect.\nThe only prerequisite needed, is to define the instance of Posit Connect you would like to publish to. In the workshop environment, this has already been configured, and you can run rsconnect list in the terminal to view the details. See Posit’s documentation for how to add a new Posit Connect instance if needed.\nTo publish the shiny application, run the following command in the terminal:\nrsconnect deploy shiny path/to/app.py/\nThe only argument you need to supply is the directory that contains the shiny for python application (called app.py). Once the deployment process is complete, you can click the links at the bottom of the terminal (see example terminal output below) to view the application now hosted on Posit Connect!\nDeployment completed successfully.\n         Dashboard content URL: https://connectexample.posit.co/cnct/connect/#/{APP_ID}\n         Direct content URL: https://connectexample.posit.co/cnct/content/{APP_ID}/",
+    "crumbs": [
+      "Communicate",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Exercise: Shiny for Python</span>"
+    ]
+  },
+  {
+    "objectID": "exercise-shiny-r.html",
+    "href": "exercise-shiny-r.html",
+    "title": "10  Exercise: Shiny for R",
+    "section": "",
+    "text": "10.1 Introduction to Git-Backed Deployment\nEvery data science workflow should use version control! The most popular version control system is git, which allows you to track the evolution of your workflow’s source code. You can host the tracked files in what’s known as a repository.\nIf the content your working on (or maybe collaboratively working on) lives withing in git repository, then you can publish it directly to Posit Connect! The only requirement is you’ll need to supply a companion manifest.json file for your content. This file contains information about the development environment so that Posit Connect knows which packages, package version, and R/Python versions are needed to run the content on Posit Connect. To create a manifest file for your R/Python content, see the documentation here and example code snippets below:\nOnce a piece of content is deployed to Posit Connect via git-backed deployment, anytime there is an update to the content within the git repository, Posit Connect will detect that change and automatically redeploy the content!\nFor this exercise, we’ve created a GitHub repository that contains a Shiny application (built using R) which we’ll deploy to Posit Connect.",
+    "crumbs": [
+      "Communicate",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Exercise: Shiny for R</span>"
+    ]
+  },
+  {
+    "objectID": "exercise-shiny-r.html#introduction-to-git-backed-deployment",
+    "href": "exercise-shiny-r.html#introduction-to-git-backed-deployment",
+    "title": "10  Exercise: Shiny for R",
+    "section": "",
+    "text": "PythonR\n\n\nrsconnect write-manifest\n\n\nlibrary(rsconnect)\n\nwriteManifest()",
+    "crumbs": [
+      "Communicate",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Exercise: Shiny for R</span>"
+    ]
+  },
+  {
+    "objectID": "exercise-shiny-r.html#step-1---initiate-git-backed-deployment-on-posit-connect",
+    "href": "exercise-shiny-r.html#step-1---initiate-git-backed-deployment-on-posit-connect",
+    "title": "10  Exercise: Shiny for R",
+    "section": "10.2 Step 1 - Initiate Git-Backed Deployment on Posit Connect",
+    "text": "10.2 Step 1 - Initiate Git-Backed Deployment on Posit Connect\nWithin the GitHub repository is a directory called shiny-app-r. Within that directory will be the two files required for git-backed deployment: the application itself (app.py) and the required manifest.json file.\nWithin Posit Connect, navigate to the Content page and click the Publish button at the top. In the dropdown menu, select Import from Git.\n\n\n\n\n\n\nFigure 10.2: Publish Drop Down Options",
+    "crumbs": [
+      "Communicate",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Exercise: Shiny for R</span>"
+    ]
+  },
+  {
+    "objectID": "exercise-shiny-r.html#step-2---add-repository-details",
+    "href": "exercise-shiny-r.html#step-2---add-repository-details",
+    "title": "10  Exercise: Shiny for R",
+    "section": "10.3 Step 2 - Add Repository Details",
+    "text": "10.3 Step 2 - Add Repository Details\nIn the next popup window, you’ll need to supply the URL for the git repository.\n\n\n\n\n\n\nFigure 10.3: Git Repository URL\n\n\n\nAfter supplying the URL, click Next where you’ll be asked to select a branch. This repository only contains a single branch called main. Ensure main is selected and click Next.\n\n\n\n\n\n\nTip\n\n\n\nYou can deploy the same piece of content from a single git repository! For example, maybe you have a developmental version on a dev branch, and a production version on the main branch.",
+    "crumbs": [
+      "Communicate",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Exercise: Shiny for R</span>"
+    ]
+  },
+  {
+    "objectID": "exercise-shiny-r.html#step-3---deploy-content",
+    "href": "exercise-shiny-r.html#step-3---deploy-content",
+    "title": "10  Exercise: Shiny for R",
+    "section": "10.4 Step 3 - Deploy Content",
+    "text": "10.4 Step 3 - Deploy Content\nAt this point, Posit Connect will look for “deployable directories.” In other words, it’s looking for directories in the repository that contain a manifest.json file. There should only be one deployable directory (shiny-app-r). Ensure it’s selected, give your application a name, then click Deploy Content!\n\n\n\n\n\n\nFigure 10.4: Deploy Content from Git Repository\n\n\n\nConnect will then read the manifest.json file and install any environment dependencies needed to ensure the application runs properly. After the deployment process is complete, click Open Content to view the application on Posit Connect!\n\n\n\n\n\n\nFigure 10.5: Covid Dashboard\n\n\n\nThis shiny dashboard tells us the same information as our previous shiny for Python application: how many new COVID cases are predicted for a given day of the year. As you can see, this application has some additional details and features that greatly improve the user experience including the total number of COVID cases for the given state/province, and the single day max number of new COVID cases.\nBy default, Posit Connect will scan the linked git repository for any changes every 15 minutes. If any changes were detected (e.g., a new commit to the main branch), Posit Connect will automatically redeploy the application! You can also manually check for repository updates by clicking the Info tab in the top right corner and selection Update Now from the side bar:\n\n\n\n\n\n\nFigure 10.6: Manually Check Git Repository for Changes",
+    "crumbs": [
+      "Communicate",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Exercise: Shiny for R</span>"
+    ]
+  }
+]
