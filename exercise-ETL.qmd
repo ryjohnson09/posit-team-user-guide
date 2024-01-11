@@ -1,4 +1,4 @@
-# Exercise: ETL
+# Exercise: ETL {#sec-etl-background}
 
 ![ETL Workflow](images/exercise-etl.png){#fig-etl-workflow fig-align="center" width="370"}
 
@@ -25,7 +25,7 @@ read_csv("data/covid.csv", show_col_types = FALSE)
 
 ## Step 1 - Extract Data from DuckDB
 
-The workshop environment comes with a DuckDB, which can be be found here: `duckdb/database/demo-datasets.db`. Within the DuckDB database is the COVID dataset described in @sec-etl-background. The first step is to make a connection to the DuckDB and read in the COVID data using R.
+The workshop environment comes with a DuckDB, which can be be found here: `duckdb/database/demo-datasets.db`. Within the DuckDB database is the COVID dataset described in . The first step is to make a connection to the DuckDB and read in the COVID data using R.
 
 All of this R code should be added to a [Quarto](https://quarto.org/) document within the RStudio IDE on Posit Workbench.
 
