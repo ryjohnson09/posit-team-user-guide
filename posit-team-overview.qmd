@@ -8,7 +8,7 @@ Posit Team is a bundled offering of Posit's three professional data science tool
 
 A quick overview of Posit Team and which development tools, supported content for hosting, and repository options are shown in @fig-pst-features.
 
-![Posit Team Features](images/pst-features.png){#fig-pst-features fig-align="center"}
+![Posit Team Features](images/pst_features.png){#fig-pst-features fig-align="center"}
 
 ### Posit Workbench
 
