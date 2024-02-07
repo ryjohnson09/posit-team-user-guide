@@ -4,7 +4,7 @@
 
 A common data science workflow entails **E**xtracting data, **T**ransforming it, and then **L**oading (ETL) it to a location to be shared with others or consumed by other content. In this exercise, you will get practice creating an ETL workflow within Posit Team. You will also leverage the job scheduling feature in Posit Connect to ensure the data remains updated automatically.
 
-The data for this exercise is "real" data regarding cases of COVID19 in the United States from 2020 to 2023. While this is a relatively small dataset, the ETL workflow (as shown in @fig-etl-workflow) is designed to work with data of all sizes! Here is a preview of the COVID dataset with an explanation of the various columns:
+The data for this exercise is **real** data regarding cases of COVID19 in the United States from 2020 to 2023. While this is a relatively small dataset, the ETL workflow (as shown in @fig-etl-workflow) is designed to work with data of all sizes! Here is a preview of the COVID dataset with an explanation of the various columns:
 
 ```{r}
 #| echo: false
@@ -25,7 +25,7 @@ read_csv("data/covid.csv", show_col_types = FALSE)
 
 ## Step 1 - Extract Data from DuckDB
 
-The workshop environment comes with a DuckDB, which can be be found here: `duckdb/database/demo-datasets.db`. Within the DuckDB database is the COVID dataset described in . The first step is to make a connection to the DuckDB and read in the COVID data using R.
+The workshop environment comes with a DuckDB, which can be be found here: `duckdb/database/demo-datasets.db`. Within the DuckDB database is the COVID dataset described in @sec-etl-background. The first step is to make a connection to the DuckDB and read in the COVID data using R.
 
 All of this R code should be added to a [Quarto](https://quarto.org/) document within the RStudio IDE on Posit Workbench.
 
@@ -41,7 +41,7 @@ library(dbplyr)
 
 ### Connect to DuckDB
 
-For this connection, we are using the `DBI` package in combination with the `duckDB` package.
+For this connection, we are using the `DBI` package in combination with the `duckdb` package.
 
 ``` r
 con <- DBI::dbConnect(duckdb::duckdb(), dbdir = "/data/duckdb/database/demo-datasets.db")
@@ -55,7 +55,7 @@ dbListTables(con)
 
 ### Extract/Transform Covid Data
 
-Let's use the `dplyr::tbl()` function to extract the Covid data from the DuckDB connection. The `tbl()` makes a "pointer" to the COVID data within the DuckDB. To pull the data into our active R session and store it in memory, we need to use the `dplyr::collect()` function:
+Let's use the `dplyr::tbl()` function to extract the COVID data from the DuckDB connection. The `tbl()` makes a "pointer" to the COVID data within the DuckDB. To pull the data into our active R session and store it in memory, we need to use the `dplyr::collect()` function:
 
 ``` r
 covid <- tbl(con, "covid") |> 
@@ -93,7 +93,9 @@ pins::pin_write(board = board, x = covid, name = "publisher1/covid_data", type =
 
 ## Step 3 - Publish Workflow and Automate
 
-Although the COVID dataset is static, from early 2020 to mid 2023, it was being updated daily. If the data changes, you'll need to re-run the ETL workflow described above to ensure the pinned dataset reflects the latest data. This is a manual process that we can automate with the help of Posit Team!
+Although the COVID dataset is static, from early 2020 to mid 2023, it *was* being updated daily. If your data changes, you'll need to re-run the ETL workflow described above to ensure the pinned dataset reflects the latest data. This is a manual process that we can automate with the help of Posit Team!
+
+### Publish to Posit Connect
 
 First, click the blue deployment button at the top of the RStudio IDE:
 
@@ -106,6 +108,8 @@ In the subsequent pop-up window, select **Posit Connect.** Importantly, to re-ru
 The last step is to define the files you want to send to Connect, the Connect instance you want to publish to, and the title of the content. If everything looks good, go ahead and click **Publish**!
 
 ![RStudio - Publish to Posit Connect](images/rstudio-publish.png){#fig-rstudio-publish fig-align="center"}
+
+### Job Scheduling
 
 Once hosted on Connect, let's set the Quarto document to re-run on a daily basis. We accomplish this by selecting the *Schedule* tab at the top. In the below configuration, the Quarto document will run every day at 9:48 am (America - New York time) and will ensure the pinned dataset is always up-to-date!
 
