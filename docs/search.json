@@ -78,7 +78,7 @@
     "href": "user-configuration.html#cli-publishing",
     "title": "3  User Configuration",
     "section": "3.2 CLI Publishing",
-    "text": "3.2 CLI Publishing\nTo check currenctly connected Posit Connect servers, you can use the rsconnect-python CLI tool and run the following command from the terminal/command line:\nrsconnect add list \nTo add a new Posit Connect instance, you’ll need the Posit Connect server URL as well as an API key (instructions for adding an API can be found here). You also need to give your Posit Connect instance a name.\nrsconnect add \\\n    --server https://my.connect.server/ \\\n    --name myServer \\\n    --api-key myconnectapikey",
+    "text": "3.2 CLI Publishing\nTo check currenctly connected Posit Connect servers, you can use the rsconnect-python CLI tool and run the following command from the terminal/command line:\nrsconnect list \nTo add a new Posit Connect instance, you’ll need the Posit Connect server URL as well as an API key (instructions for adding an API can be found here). You also need to give your Posit Connect instance a name.\nrsconnect add \\\n    --server https://my.connect.server/ \\\n    --name myServer \\\n    --api-key myconnectapikey",
     "crumbs": [
       "Overview and Setup",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>User Configuration</span>"

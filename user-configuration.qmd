@@ -63,7 +63,7 @@ Navigate to **Tools –\> Global Options –\> Publishing.** In some cases, the 
 To check currenctly connected Posit Connect servers, you can use the `rsconnect-python` CLI tool and run the following command from the terminal/command line:
 
 ``` bash
-rsconnect add list 
+rsconnect list 
 ```
 
 To add a new Posit Connect instance, you'll need the Posit Connect server URL as well as an API key (instructions for adding an API can be found [here](https://docs.posit.co/connect/user/api-keys/)). You also need to give your Posit Connect instance a name.
