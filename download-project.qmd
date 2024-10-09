@@ -1,0 +1,35 @@
+# Download Project
+
+This workshop teaches how to use Posit Team and data science best practices using a read data science project. The data is a exerpt from the [gapminder data set](https://www.gapminder.org/data/) and the project goal is to use this data to create and serve a model that predicts the life expectancy at birth based on various predictors such as country, year, population, and per-capita GDP.
+
+This project lives on GitHub here: <https://github.com/ryjohnson09/gapminder-analysis.git>
+
+## Create an RStudio Project
+
+There are several ways to bring a project from a Git repository into your development environment. In this workshop, we will do so by creating a new RStudio Project.
+
+::: panel-tabset
+## Step 1: Create a New RStudio Project
+
+Navigate to RStudio and select `File --> New Project`. In the pop-up window, select `Version Control`.
+
+![](images/new-rstudio-project.png){#new-rstudio-project fig-align="center"}
+
+## Step 2: Select `git`
+
+Since we are pulling in a project from GitHub, select `git`.
+
+![](images/select-git.png){#new-rstudio-project-git fig-align="center"}
+
+## Step 3: Add info and create project
+
+Add in the GitHub repo URL (`https://github.com/ryjohnson09/gapminder-analysis.git`) and give the project directory a name. `gapminder-analysis` is suitable, but you can name it whatever you would like. Then click **Create Project**.
+
+![](images/add-git-repo-project.png){#add-git-repo-project fig-align="center"}
+:::
+
+## Project Structure
+
+The project follows a *project oriented workflow* in that each piece of content associated with the workflow is contained within a separate RStudio Project (R) or virtual environment (Python). To manage the packages for each piece of content, we use `renv` for R (renv.lock file) and a `requirements.txt` file for Python. The entire project is tracked using a top-level git repository. See image below:
+
+![](images/project-structure.png){#fig-project-structure fig-align="center"}

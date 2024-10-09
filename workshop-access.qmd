@@ -1,1 +1,59 @@
 # Workshop Access
+
+The workshop environment can be accessed at <https://ferryland.posit.team/>
+
+![](images/ptd.png){#ptd fig-align="center"}
+
+## Create a GitHub Account
+
+In order to access the workshop environment, you will need to have a GitHub account. Please create an account [here](https://github.com/).
+
+::: callout-important
+**Please ensure you add your name to your GitHub account!** Navigate to your GitHub account page and click `Edit profile` under your avatar/profile picture.
+:::
+
+## Access Posit Connect
+
+Follow the steps below to access [Posit Connect](https://pub.ferryland.posit.team/).
+
+::: panel-tabset
+## Step 1: Log In
+
+Navigate to [Posit Connect](https://pub.ferryland.posit.team/) and click **Log In** in the top right corner.
+
+![Posit Connect - Log In Screen](images/PCT-login.png){#pct-login fig-align="center" width="570"}
+
+## Step 2: Keycloak
+
+You will be met with an authentication request using a tool called Keycloak. To start, click the small GitHub icon at the bottom of the window.
+
+![](images/keycloak.png){#keycloak fig-align="center" width="271"}
+
+## Step 3: Allow Access
+
+Next, you will be prompted to allow the workshop environment to access your GitHub account. Click the green button to allow access.
+
+![](images/authorize-github.png){#authorize-github fig-align="center" width="428"}
+
+You should now have access to Posit Connect!
+:::
+
+## Access Posit Workbench
+
+You only have to give the workshop environment access to your GitHub account once, so logging into Posit Workbench is very simple! Navigate to [Posit Workbench](https://dev.ferryland.posit.team/) and click **Sign in with OpenID.**
+
+![](images/openid.png){#openid fig-align="center" width="608"}
+
+You should now have access to Posit Workbench! The homescreen for Posit Workbench should look like the image below. Please note your name in the top right corner.
+
+![](images/pwb-homescreen.png){#pwb-homescreen fig-align="center"}
+
+## Troubleshooting
+
+If you have any issues logging into Posit Connect or Posit Workbench, please validate your identity on the [workshop environment](https://ferryland.posit.team/) by clicking the **Identity Provider** tile at the bottom.
+
+![](images/identity-provider-tile.png){#identity-provider-tile fig-align="center" width="289"}
+
+Ensure that all of the information is correct and that your First and Last Name text boxes are filled in!
+
+![](images/identity-provider.png){#identity-provider fig-align="center"}

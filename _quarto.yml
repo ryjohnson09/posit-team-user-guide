@@ -3,32 +3,26 @@ project:
   output-dir: docs
 
 book:
+  favicon: images/favicon.svg
   sidebar: 
     logo: images/logo-team-full-color.svg
+    tools:
+      - icon: github
+        href: https://github.com/ryjohnson09/gapminder-analysis.git
+      - icon: file-pdf
+        href: https://drive.google.com/file/d/1AQqaVRl7S3PXOBh7in6RUfudykdvKMrh/view?usp=sharing
   chapters:
     - index.qmd
     
     - part: Overview and Setup
       chapters: 
         - workshop-access.qmd
-        - posit-team-overview.qmd
-        - user-configuration.qmd
+        - download-project.qmd
+        - configure-repos.qmd
     - part: Data
-      chapters: 
-        - data.qmd
-        - exercise-ETL.qmd
     - part: Understand
-      chapters: 
-        - modeling.qmd
-        - exercise-model.qmd
     - part: Communicate
-      chapters: 
-        - shiny.qmd
-        - exercise-shiny-py.qmd
-        - exercise-shiny-r.qmd
     - part: Bonus Content
-      chapters: 
-        - bonus-content.qmd
 
 
 format:

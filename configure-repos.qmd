@@ -1,0 +1,43 @@
+# Configure Repositories
+
+As an open-source developer, it's crucial to be aware of the sources from which you are installing your open-source R or Python packages. In this chapter, we'll guide you through checking your current repository configurations and how to set them up to obtain packages from the Posit Package Manager.
+
+## R Repositories
+
+To view the repositories from which R installs packages, you can run the following command:
+
+``` r
+options("repos")
+```
+
+R uses these repositories to search for and download packages when you run functions like `install.packages()` . Usually a CRAN (Comprehensive R Archive Network) mirror is set as default, but you can also configure custom repositories using the same function:
+
+``` r
+options(repos = c(CRAN = "https://pkg.ferryland.posit.team/cran/__linux__/jammy/latest"))
+```
+
+The command above will configure your default R repository to CRAN within Posit Package Manager (`https://pkg.ferryland.posit.team`). It will also ensure that you install pre-built R package binaries for Linux (`__linux__/jammy`) and access the latest available versions of those packages (`latest`).
+
+To maintain this configuration across R sessions, paste the above function into your R startup file (`Rprofile.site` or `.Rprofile`).
+
+## Python Repositories
+
+Python packages are installed *outside* of Python using the command line interface (CLI) tool called `pip`. By default, `pip` will reach out to the Python Package Index repository, or PyPI, when new packages are installed. For example, if you run the following command:
+
+``` bash
+pip install shiny
+```
+
+This will install the `shiny` python package from PyPI, specially from the default PyPI URL (`https://pypi.org/simple`). If you would like to modify this URL to point to an instace of PyPI within Posit Package Manager, you can use the following command:
+
+``` bash
+pip config set global.index-url https://pkg.ferryland.posit.team/pypi/latest/simple
+```
+
+The command modifies the configuration of `pip` to change the default package index URL (`global.index-url`) to an instance of PyPI on Posit Package Manager (`https://pkg.ferryland.posit.team`). It also configures `pip` to access the latest available versions of those packages (`latest`).
+
+You can check the updated package index URL by running the following command:
+
+``` python
+pip config list
+```
