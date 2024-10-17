@@ -20,6 +20,7 @@ book:
         - download-project.qmd
         - configure-repos.qmd
         - api-keys.qmd
+        - verify-publishing.qmd
     - part: Data
     - part: Understand
     - part: Communicate

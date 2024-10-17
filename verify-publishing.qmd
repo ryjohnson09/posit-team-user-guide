@@ -1,0 +1,28 @@
+# Verify Publishing Status
+
+Before publishing to Posit Connect, you must ensure that your development environment is properly configured with your Posit Connect instance. In some cases, system administrators may handle this setup for you. If not, the following instructions will guide you through the configuration process.
+
+## Publishing from RStudio
+
+Within RStudio's global options, you have the ability to connect to your instance of Posit Connect. The only thing you'll need is the URL for your Connect server.
+
+![](images/rstudio-publishing-status.png){#rstudio-publishing-status fig-align="center"}
+
+Once you select `Global Options...` from the `Tools` tab, select the `Publishing` options and click `Connect...` to connect to your instance of Posit Connect.
+
+## Publishing from Terminal
+
+For Jupyter and VS Code, you'll often leverage the terminal/command line for publshing content to Posit Connect. After ensuring you have the `rsconnect-python` package installed (`pip install rsconnect-python`), you can check if you have any Posit Connect instances currently configure by running the following command in the terminal:
+
+``` bash
+rsconnect list
+```
+
+If nothing is returned, then you can add a new Posit Connect server by running the following command in the terminal, making sure to replace `https://my.connect.server` with your Posit Connect server URL. You can also change the name `myServer` to whatever you like:
+
+``` bash
+rsconnect add \
+    --server https://my.connect.server/ \
+    --name myServer \
+    --api-key $CONNECT_API_KEY
+```

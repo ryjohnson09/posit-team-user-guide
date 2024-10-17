@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>index</title>
+<title>5&nbsp; Verify Publishing Status</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./workshop-access.html" rel="next">
+<link href="./api-keys.html" rel="prev">
 <link href="./images/favicon.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -81,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome to Posit Team User Training!</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./workshop-access.html">Overview and Setup</a></li><li class="breadcrumb-item"><a href="./verify-publishing.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Verify Publishing Status</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -112,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome to Posit Team User Training!</span></a>
   </div>
 </li>
@@ -151,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./verify-publishing.html" class="sidebar-item-text sidebar-link">
+  <a href="./verify-publishing.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Verify Publishing Status</span></span></a>
   </div>
 </li>
@@ -183,78 +217,55 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#welcome-to-posit-team-user-training" id="toc-welcome-to-posit-team-user-training" class="nav-link active" data-scroll-target="#welcome-to-posit-team-user-training">Welcome to Posit Team User Training!</a>
-  <ul class="collapse">
-  <li><a href="#workshop-goal" id="toc-workshop-goal" class="nav-link" data-scroll-target="#workshop-goal">Workshop Goal</a></li>
-  <li><a href="#agenda" id="toc-agenda" class="nav-link" data-scroll-target="#agenda">Agenda</a></li>
-  </ul></li>
+  <li><a href="#publishing-from-rstudio" id="toc-publishing-from-rstudio" class="nav-link active" data-scroll-target="#publishing-from-rstudio"><span class="header-section-number">5.1</span> Publishing from RStudio</a></li>
+  <li><a href="#publishing-from-terminal" id="toc-publishing-from-terminal" class="nav-link" data-scroll-target="#publishing-from-terminal"><span class="header-section-number">5.2</span> Publishing from Terminal</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./workshop-access.html">Overview and Setup</a></li><li class="breadcrumb-item"><a href="./verify-publishing.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Verify Publishing Status</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Verify Publishing Status</span></h1>
+</div>
 
 
 
-<section id="welcome-to-posit-team-user-training" class="level1 unnumbered">
-<h1 class="unnumbered">Welcome to Posit Team User Training!</h1>
-<p>Slides can be downloaded <a href="https://drive.google.com/file/d/1AQqaVRl7S3PXOBh7in6RUfudykdvKMrh/view?usp=sharing">here</a>.</p>
-<p>Workshop GitHub repository can be found <a href="https://github.com/ryjohnson09/gapminder-analysis.git">here</a>.</p>
-<p>This book is a companion to the live Posit Team User training workshop hosted by Posit.</p>
-<p>Posit Team is a bundled offering of Posit’s three professional data science tools: Posit Workbench, Posit Connect, and Posit Workbench. <strong>For this book, we consider Posit Team users to be data scientists that are writing code and developing data products (e.g., Shiny applications and Quarto documents)</strong>.</p>
-<section id="workshop-goal" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="workshop-goal">Workshop Goal</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Workshop Goal
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Provide every participant with a <strong>foundational knowledge</strong> of Posit Team through interactive data science workflows.</p>
-</div>
-</div>
-<p>What is considered <em>foundational knowledge</em>? For this workshop, foundational knowledge is the <em>minimum</em> Posit Team feature set and/or workflows that every user should be aware of, including:</p>
-<p><strong>Posit Workbench</strong></p>
-<ul>
-<li><p>Integrated Development Environment (IDE) Options</p></li>
-<li><p>Data Access</p></li>
-<li><p>Job Launcher</p></li>
-</ul>
-<p><strong>Posit Connect</strong></p>
-<ul>
-<li><p>Publishing Methods</p></li>
-<li><p>Content Sharing and Access Control</p></li>
-<li><p>Job Scheduling</p></li>
-<li><p>Supported Content Types</p></li>
-<li><p>Runtime Settings</p></li>
-</ul>
-<p><strong>Posit Package Manager</strong></p>
-<ul>
-<li>R/Python Package Access</li>
-</ul>
-</section>
-<section id="agenda" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="agenda">Agenda</h2>
-<p>This workshop will loosely follow the model of a typical data science project as described in <a href="https://r4ds.hadley.nz/">R for Data Science</a>:</p>
-<div id="fig-data-science-model" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-data-science-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/data-science-model.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-science-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Data science project model
-</figcaption>
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Before publishing to Posit Connect, you must ensure that your development environment is properly configured with your Posit Connect instance. In some cases, system administrators may handle this setup for you. If not, the following instructions will guide you through the configuration process.</p>
+<section id="publishing-from-rstudio" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="publishing-from-rstudio"><span class="header-section-number">5.1</span> Publishing from RStudio</h2>
+<p>Within RStudio’s global options, you have the ability to connect to your instance of Posit Connect. The only thing you’ll need is the URL for your Connect server.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/rstudio-publishing-status.png" id="rstudio-publishing-status" class="img-fluid quarto-figure quarto-figure-center anchored figure-img"></p>
 </figure>
 </div>
-<p>We’ll begin with some workshop logistics and an overview of Posit Team. The remainder of the workshop will follow the above <em>Data</em> (focus on <em>Import</em>), <em>Understand</em>, and <em>Communicate</em> data science model.</p>
-
-
+<p>Once you select <code>Global Options...</code> from the <code>Tools</code> tab, select the <code>Publishing</code> options and click <code>Connect...</code> to connect to your instance of Posit Connect.</p>
 </section>
+<section id="publishing-from-terminal" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="publishing-from-terminal"><span class="header-section-number">5.2</span> Publishing from Terminal</h2>
+<p>For Jupyter and VS Code, you’ll often leverage the terminal/command line for publshing content to Posit Connect. After ensuring you have the <code>rsconnect-python</code> package installed (<code>pip install rsconnect-python</code>), you can check if you have any Posit Connect instances currently configure by running the following command in the terminal:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rsconnect</span> list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If nothing is returned, then you can add a new Posit Connect server by running the following command in the terminal, making sure to replace <code>https://my.connect.serv</code> with your Posit Connect server URL. You can also change the name <code>myServer</code> to whatever you like:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rsconnect</span> add <span class="dt">\</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">--server</span> https://my.connect.server/ <span class="dt">\</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">--name</span> myServer <span class="dt">\</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">--api-key</span> <span class="va">$CONNECT_API_KEY</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -669,11 +680,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./api-keys.html" class="pagination-link" aria-label="API Keys">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">API Keys</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./workshop-access.html" class="pagination-link" aria-label="Workshop Access">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Workshop Access</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

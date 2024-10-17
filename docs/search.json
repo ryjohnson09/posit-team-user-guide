@@ -578,5 +578,27 @@
       "Overview and Setup",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>API Keys</span>"
     ]
+  },
+  {
+    "objectID": "verify-publishing.html",
+    "href": "verify-publishing.html",
+    "title": "5  Verify Publishing Status",
+    "section": "",
+    "text": "5.1 Publishing from RStudio\nWithin RStudio’s global options, you have the ability to connect to your instance of Posit Connect. The only thing you’ll need is the URL for your Connect server.\nOnce you select Global Options... from the Tools tab, select the Publishing options and click Connect... to connect to your instance of Posit Connect.",
+    "crumbs": [
+      "Overview and Setup",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Verify Publishing Status</span>"
+    ]
+  },
+  {
+    "objectID": "verify-publishing.html#publishing-from-terminal",
+    "href": "verify-publishing.html#publishing-from-terminal",
+    "title": "5  Verify Publishing Status",
+    "section": "5.2 Publishing from Terminal",
+    "text": "5.2 Publishing from Terminal\nFor Jupyter and VS Code, you’ll often leverage the terminal/command line for publshing content to Posit Connect. After ensuring you have the rsconnect-python package installed (pip install rsconnect-python), you can check if you have any Posit Connect instances currently configure by running the following command in the terminal:\nrsconnect list\nIf nothing is returned, then you can add a new Posit Connect server by running the following command in the terminal, making sure to replace https://my.connect.serv with your Posit Connect server URL. You can also change the name myServer to whatever you like:\nrsconnect add \\\n    --server https://my.connect.server/ \\\n    --name myServer \\\n    --api-key $CONNECT_API_KEY",
+    "crumbs": [
+      "Overview and Setup",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Verify Publishing Status</span>"
+    ]
   }
 ]
