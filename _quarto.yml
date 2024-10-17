@@ -19,6 +19,7 @@ book:
         - workshop-access.qmd
         - download-project.qmd
         - configure-repos.qmd
+        - api-keys.qmd
     - part: Data
     - part: Understand
     - part: Communicate

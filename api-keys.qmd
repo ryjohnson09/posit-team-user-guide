@@ -1,0 +1,97 @@
+# API Keys
+
+An Application Programming Interface (API) Key is like a **password**. It proves that the person/content/app using the key has the permission to access specific data or services. In this exercise, we'll walk you though how to create an API key on Posit Connect and add it to your R/Python environments as an **environment variable.**
+
+## Create API Key on Posit Connect
+
+![](images/api-key-pct.png){#api-key-pct fig-align="center"}
+
+1.  Navigate to Posit Connect and click your username in the top right corner.
+2.  Select `API Keys`.
+3.  Click the `+ New API Key` button to create a new API key.
+4.  Give you API key a name (any name will do) and click `Create Key`.
+
+The API key will then be displayed with the option to copy it to your clipboard.
+
+::: callout-caution
+**Never include this API key directly in your code!** It's best practice to store it as an environment variable, and we'll show you how to do that in the next section.
+:::
+
+## Add API Key to your R Environment
+
+### Install and load the `usethis` R Package
+
+Within RStudio, run the following commands in the console:
+
+``` r
+# Install the usethis package
+install.packages("usethis")
+
+# Load the usethis package
+library(usethis)
+```
+
+### Open the .Renviron file
+
+The `.Renviron` file is a special file in R that executes its contents each time R starts. It’s the recommended location for storing sensitive information, such as API keys. To open your `.Renviron` file, run the following code:
+
+``` r
+# Open/Create your .Renviron file
+usethis::edit_r_environ()
+```
+
+### Add your Posit Connect API Key
+
+Add your API key to the `.Renviron` file:
+
+``` bash
+CONNECT_API_KEY=api-key-goes-here
+ 
+```
+
+::: callout-tip
+Some files, like `.Renviron` and other configuration or script files, often **include an empty line at the bottom** due to convention and practical reasons related to how these files are read and processed by different programs or text editors.
+:::
+
+### Restart your R session
+
+We need to restart R in order for the `.Renviron` file to be sourced. You can do this by clicking `Session` at the top of the RStudio IDE and select `Restart R`. You can verify if your API key has been set by running the following code in your R console:
+
+``` r
+Sys.getenv("CONNECT_API_KEY")
+```
+
+You should see the API key printed to the console.
+
+## Add API Key to your Python Environment
+
+There are several ways to add environment variables to your Python environment. In this workshop, we will add them to the `.bashrc` file, which makes the variables available in your terminal/bash environment. After that, we can use Python's `os` module to access these environment variables.
+
+### Open your `.bashrc` file
+
+Using VS Code, open your `.bashrc` file by clicking the three-line button in the top left corner and selecting `File –> Open File...`. This will open your command palette. Type out the location of your `.bashrc` file as follows, making sure to replace \<username\> with your username:
+
+``` bash
+/home/username/.bashrc
+```
+
+### Add your API key to the `.bashrc` file
+
+Scroll to the bottom of the `.bashrc` file and add the following code, making sure to replace \<api-key-goes-here\> with your API key:
+
+``` bash
+CONNECT_API_KEY='api-key-goes-here'
+ 
+```
+
+Again, make sure to add an empty line at the end.
+
+### Restart your VS Code session
+
+In most cases, you can simply restart your teminal to pick ensure the `.bashrc` file is sourced. But to be 100%, we can restart our entire VS Code session. Navigate back to the Posit Workbench home page and close the VS Code session and create a new one. Once back in VS Code, you can verify if your API key has been set by running the following code in your terminal:
+
+``` bash
+echo $CONNECT_API_KEY
+```
+
+You should see the API key printed to the terminal.

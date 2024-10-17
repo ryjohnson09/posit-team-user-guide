@@ -523,5 +523,60 @@
       "Overview and Setup",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Download Project</span>"
     ]
+  },
+  {
+    "objectID": "download-project.html#project-structure",
+    "href": "download-project.html#project-structure",
+    "title": "2  Download Project",
+    "section": "2.2 Project Structure",
+    "text": "2.2 Project Structure\nThe project follows a project oriented workflow in that each piece of content associated with the workflow is contained within a separate RStudio Project (R) or virtual environment (Python). To manage the packages for each piece of content, we use renv for R (renv.lock file) and a requirements.txt file for Python. The entire project is tracked using a top-level git repository. See image below:\n\n\n\n\n\n\nFigure 2.1",
+    "crumbs": [
+      "Overview and Setup",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Download Project</span>"
+    ]
+  },
+  {
+    "objectID": "api-keys.html",
+    "href": "api-keys.html",
+    "title": "4  API Keys",
+    "section": "",
+    "text": "4.1 Create API Key on Posit Connect\nThe API key will then be displayed with the option to copy it to your clipboard.",
+    "crumbs": [
+      "Overview and Setup",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>API Keys</span>"
+    ]
+  },
+  {
+    "objectID": "api-keys.html#create-api-key-on-posit-connect",
+    "href": "api-keys.html#create-api-key-on-posit-connect",
+    "title": "4  API Keys",
+    "section": "",
+    "text": "Navigate to Posit Connect and click your username in the top right corner.\nSelect API Keys.\nClick the + New API Key button to create a new API key.\nGive you API key a name (any name will do) and click Create Key.\n\n\n\n\n\n\n\n\nCaution\n\n\n\nNever include this API key directly in your code! It’s best practice to store it as an environment variable, and we’ll show you how to do that in the next section.",
+    "crumbs": [
+      "Overview and Setup",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>API Keys</span>"
+    ]
+  },
+  {
+    "objectID": "api-keys.html#add-api-key-to-your-r-environment",
+    "href": "api-keys.html#add-api-key-to-your-r-environment",
+    "title": "4  API Keys",
+    "section": "4.2 Add API Key to your R Environment",
+    "text": "4.2 Add API Key to your R Environment\n\n4.2.1 Install and load the usethis R Package\nWithin RStudio, run the following commands in the console:\n# Install the usethis package\ninstall.packages(\"usethis\")\n\n# Load the usethis package\nlibrary(usethis)\n\n\n4.2.2 Open the .Renviron file\nThe .Renviron file is a special file in R that executes its contents each time R starts. It’s the recommended location for storing sensitive information, such as API keys. To open your .Renviron file, run the following code:\n# Open/Create your .Renviron file\nusethis::edit_r_environ()\n\n\n4.2.3 Add your Posit Connect API Key\nAdd your API key to the .Renviron file:\nCONNECT_API_KEY=api-key-goes-here\n\n\n\n\n\n\nTip\n\n\n\nSome files, like .Renviron and other configuration or script files, often include an empty line at the bottom due to convention and practical reasons related to how these files are read and processed by different programs or text editors.\n\n\n\n\n4.2.4 Restart your R session\nWe need to restart R in order for the .Renviron file to be sourced. You can do this by clicking Session at the top of the RStudio IDE and select Restart R. You can verify if your API key has been set by running the following code in your R console:\nSys.getenv(\"CONNECT_API_KEY\")\nYou should see the API key printed to the console.",
+    "crumbs": [
+      "Overview and Setup",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>API Keys</span>"
+    ]
+  },
+  {
+    "objectID": "api-keys.html#add-api-key-to-your-python-environment",
+    "href": "api-keys.html#add-api-key-to-your-python-environment",
+    "title": "4  API Keys",
+    "section": "4.3 Add API Key to your Python Environment",
+    "text": "4.3 Add API Key to your Python Environment\nThere are several ways to add environment variables to your Python environment. In this workshop, we will add them to the .bashrc file, which makes the variables available in your terminal/bash environment. After that, we can use Python’s os module to access these environment variables.\n\n4.3.1 Open your .bashrc file\nUsing VS Code, open your .bashrc file by clicking the three-line button in the top left corner and selecting File –&gt; Open File.... This will open your command palette. Type out the location of your .bashrc file as follows, making sure to replace &lt;username&gt; with your username:\n/home/username/.bashrc\n\n\n4.3.2 Add your API key to the .bashrc file\nScroll to the bottom of the .bashrc file and add the following code, making sure to replace &lt;api-key-goes-here&gt; with your API key:\nCONNECT_API_KEY='api-key-goes-here'\nAgain, make sure to add an empty line at the end.\n\n\n4.3.3 Restart your VS Code session\nIn most cases, you can simply restart your teminal to pick ensure the .bashrc file is sourced. But to be 100%, we can restart our entire VS Code session. Navigate back to the Posit Workbench home page and close the VS Code session and create a new one. Once back in VS Code, you can verify if your API key has been set by running the following code in your terminal:\necho $CONNECT_API_KEY\nYou should see the API key printed to the terminal.",
+    "crumbs": [
+      "Overview and Setup",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>API Keys</span>"
+    ]
   }
 ]
