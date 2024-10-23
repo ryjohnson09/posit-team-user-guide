@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Workshop Access</title>
+<title>6&nbsp; Restoring an R Project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./download-project.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./verify-publishing.html" rel="prev">
 <link href="./images/favicon.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -82,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./workshop-access.html">Overview and Setup</a></li><li class="breadcrumb-item"><a href="./workshop-access.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Workshop Access</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./rproj-restore.html">Data</a></li><li class="breadcrumb-item"><a href="./rproj-restore.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Restoring an R Project</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -128,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./workshop-access.html" class="sidebar-item-text sidebar-link active">
+  <a href="./workshop-access.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Workshop Access</span></span></a>
   </div>
 </li>
@@ -159,8 +192,21 @@ ul.task-list li input[type="checkbox"] {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Data</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rproj-restore.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Restoring an R Project</span></span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
@@ -184,19 +230,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#create-a-github-account" id="toc-create-a-github-account" class="nav-link active" data-scroll-target="#create-a-github-account"><span class="header-section-number">1.1</span> Create a GitHub Account</a></li>
-  <li><a href="#access-posit-connect" id="toc-access-posit-connect" class="nav-link" data-scroll-target="#access-posit-connect"><span class="header-section-number">1.2</span> Access Posit Connect</a></li>
-  <li><a href="#access-posit-workbench" id="toc-access-posit-workbench" class="nav-link" data-scroll-target="#access-posit-workbench"><span class="header-section-number">1.3</span> Access Posit Workbench</a></li>
-  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting"><span class="header-section-number">1.4</span> Troubleshooting</a></li>
+  <li><a href="#rstudio-projects-and-.rproj" id="toc-rstudio-projects-and-.rproj" class="nav-link active" data-scroll-target="#rstudio-projects-and-.rproj"><span class="header-section-number">6.1</span> RStudio Projects and <code>.Rproj</code></a></li>
+  <li><a href="#the-renv-package" id="toc-the-renv-package" class="nav-link" data-scroll-target="#the-renv-package"><span class="header-section-number">6.2</span> The <code>renv</code> package</a></li>
+  <li><a href="#how-to-restore-an-rstudio-project" id="toc-how-to-restore-an-rstudio-project" class="nav-link" data-scroll-target="#how-to-restore-an-rstudio-project"><span class="header-section-number">6.3</span> How to restore an RStudio Project</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./workshop-access.html">Overview and Setup</a></li><li class="breadcrumb-item"><a href="./workshop-access.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Workshop Access</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./rproj-restore.html">Data</a></li><li class="breadcrumb-item"><a href="./rproj-restore.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Restoring an R Project</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Workshop Access</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Restoring an R Project</span></h1>
 </div>
 
 
@@ -213,93 +258,31 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The workshop environment can be accessed at <a href="https://ferryland.posit.team/" class="uri">https://ferryland.posit.team/</a></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/ptd.png" id="ptd" class="img-fluid quarto-figure quarto-figure-center anchored figure-img"></p>
-</figure>
-</div>
-<section id="create-a-github-account" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="create-a-github-account"><span class="header-section-number">1.1</span> Create a GitHub Account</h2>
-<p>In order to access the workshop environment, you will need to have a GitHub account. Please create an account <a href="https://github.com/">here</a>.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Please ensure you add your name to your GitHub account!</strong> Navigate to your GitHub account page and click <code>Edit profile</code> under your avatar/profile picture.</p>
-</div>
-</div>
+<p>When someone shares a project with you, it’s important that you know how to restore it to it’s appropriate state that ensure all of the code runs as intended. In this lesson, we’ll demonstrate how to restore an R project using <strong>RStudio Projects</strong> and the <code>renv</code> package.</p>
+<section id="rstudio-projects-and-.rproj" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="rstudio-projects-and-.rproj"><span class="header-section-number">6.1</span> RStudio Projects and <code>.Rproj</code></h2>
+<p>In this workshop, our R workflows live within <strong>RStudio Projects</strong>. An RStudio Project is a way to organize all the files, code, data, and settings for a specific analysis or project in RStudio. It helps keep everything related to that project in one place, making it easier to manage.</p>
+<p>The <strong><code>.Rproj</code></strong> fileis a small file that stores the settings for that specific project and resides within the home directory of your RStudio Project. When you open it, it tells RStudio to open the project with the correct working directory and any custom settings you’ve set for that project.</p>
 </section>
-<section id="access-posit-connect" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="access-posit-connect"><span class="header-section-number">1.2</span> Access Posit Connect</h2>
-<p>Follow the steps below to access <a href="https://pub.ferryland.posit.team/">Posit Connect</a>.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Step 1: Log In</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Step 2: Keycloak</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Step 3: Allow Access</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Navigate to <a href="https://pub.ferryland.posit.team/">Posit Connect</a> and click <strong>Log In</strong> in the top right corner.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/PCT-login.png" class="img-fluid figure-img" width="570"></p>
-<figcaption>Posit Connect - Log In Screen</figcaption>
-</figure>
-</div>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>You will be met with an authentication request using a tool called Keycloak. To start, click the small GitHub icon at the bottom of the window.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/keycloak.png" id="keycloak" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" width="271"></p>
-</figure>
-</div>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p>Next, you will be prompted to allow the workshop environment to access your GitHub account. Click the green button to allow access.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/authorize-github.png" id="authorize-github" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" width="428"></p>
-</figure>
-</div>
-<p>You should now have access to Posit Connect!</p>
-</div>
-</div>
-</div>
+<section id="the-renv-package" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="the-renv-package"><span class="header-section-number">6.2</span> The <code>renv</code> package</h2>
+<p>The <a href="https://rstudio.github.io/renv/"><code>renv</code></a> R package manages and isolates R packages for each RStudio project, creating a separate “library” for each project. This makes it easier to share, collaborate, and rerun projects across different systems without worrying about package conflicts or version mismatches. The <code>renv.lock</code> file stores the exact package versions used in a project, ensuring that the environment can be reliably reproduced, maintaining consistency and avoiding issues from package updates.</p>
 </section>
-<section id="access-posit-workbench" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="access-posit-workbench"><span class="header-section-number">1.3</span> Access Posit Workbench</h2>
-<p>You only have to give the workshop environment access to your GitHub account once, so logging into Posit Workbench is very simple! Navigate to <a href="https://dev.ferryland.posit.team/">Posit Workbench</a> and click <strong>Sign in with OpenID.</strong></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/openid.png" id="openid" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" width="608"></p>
-</figure>
-</div>
-<p>You should now have access to Posit Workbench! The homescreen for Posit Workbench should look like the image below. Please note your name in the top right corner.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/pwb-homescreen.png" id="pwb-homescreen" class="img-fluid quarto-figure quarto-figure-center anchored figure-img"></p>
-</figure>
-</div>
-</section>
-<section id="troubleshooting" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="troubleshooting"><span class="header-section-number">1.4</span> Troubleshooting</h2>
-<p>If you have any issues logging into Posit Connect or Posit Workbench, please validate your identity on the <a href="https://ferryland.posit.team/">workshop environment</a> by clicking the <strong>Identity Provider</strong> tile at the bottom.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/identity-provider-tile.png" id="identity-provider-tile" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" width="289"></p>
-</figure>
-</div>
-<p>Ensure that all of the information is correct and that your First and Last Name text boxes are filled in!</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/identity-provider.png" id="identity-provider" class="img-fluid quarto-figure quarto-figure-center anchored figure-img"></p>
-</figure>
-</div>
+<section id="how-to-restore-an-rstudio-project" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="how-to-restore-an-rstudio-project"><span class="header-section-number">6.3</span> How to restore an RStudio Project</h2>
+<p>Once an RStudio Project has been shared with you, you’ll want to restore the package environment to ensure all of the code runs as intended.</p>
+<p>First, ensure you are within the RStudio Project by clicking the <code>.Rproj</code> file. Once opened, <code>renv</code> should automatically be initialized. If not, we’d recommend running <code>renv::status()</code> to get a better sense of your project’s current state.</p>
+<p>In most cases, to restore a project’s package environment (as defined in the <code>renv.lock</code> file), you only need to run <code>renv::restore()</code> and follow the console prompts. Below is the code summary for restoring an RStudio project:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ensure you have clicked the .Rproj file</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Check renv status</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">status</span>()</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># If project is not initialized with renv, then run the following</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">init</span>()</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Restore projects package environment</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
@@ -716,14 +699,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Welcome to Posit Team User Training!">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome to Posit Team User Training!</span>
+      <a href="./verify-publishing.html" class="pagination-link" aria-label="Verify Publishing Status">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Verify Publishing Status</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./download-project.html" class="pagination-link" aria-label="Download Project">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Download Project</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

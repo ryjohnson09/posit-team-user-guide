@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Workshop Access</title>
+<title>7&nbsp; Exercise: Extract, Transform, Load (ETL)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./download-project.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./rproj-restore.html" rel="prev">
 <link href="./images/favicon.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -82,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./workshop-access.html">Overview and Setup</a></li><li class="breadcrumb-item"><a href="./workshop-access.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Workshop Access</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./rproj-restore.html">Data</a></li><li class="breadcrumb-item"><a href="./etl.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Exercise: Extract, Transform, Load (ETL)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -128,7 +127,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./workshop-access.html" class="sidebar-item-text sidebar-link active">
+  <a href="./workshop-access.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Workshop Access</span></span></a>
   </div>
 </li>
@@ -159,8 +158,27 @@ ul.task-list li input[type="checkbox"] {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Data</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rproj-restore.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Restoring an R Project</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./etl.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Exercise: Extract, Transform, Load (ETL)</span></span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
@@ -184,19 +202,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#create-a-github-account" id="toc-create-a-github-account" class="nav-link active" data-scroll-target="#create-a-github-account"><span class="header-section-number">1.1</span> Create a GitHub Account</a></li>
-  <li><a href="#access-posit-connect" id="toc-access-posit-connect" class="nav-link" data-scroll-target="#access-posit-connect"><span class="header-section-number">1.2</span> Access Posit Connect</a></li>
-  <li><a href="#access-posit-workbench" id="toc-access-posit-workbench" class="nav-link" data-scroll-target="#access-posit-workbench"><span class="header-section-number">1.3</span> Access Posit Workbench</a></li>
-  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting"><span class="header-section-number">1.4</span> Troubleshooting</a></li>
+  <li><a href="#workflow-steps" id="toc-workflow-steps" class="nav-link active" data-scroll-target="#workflow-steps"><span class="header-section-number">7.1</span> Workflow Steps</a></li>
+  <li><a href="#push-button-deployment" id="toc-push-button-deployment" class="nav-link" data-scroll-target="#push-button-deployment"><span class="header-section-number">7.2</span> Push Button Deployment</a></li>
+  <li><a href="#scheduling-on-posit-connect" id="toc-scheduling-on-posit-connect" class="nav-link" data-scroll-target="#scheduling-on-posit-connect"><span class="header-section-number">7.3</span> Scheduling on Posit Connect</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./workshop-access.html">Overview and Setup</a></li><li class="breadcrumb-item"><a href="./workshop-access.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Workshop Access</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./rproj-restore.html">Data</a></li><li class="breadcrumb-item"><a href="./etl.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Exercise: Extract, Transform, Load (ETL)</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Workshop Access</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Exercise: Extract, Transform, Load (ETL)</span></h1>
 </div>
 
 
@@ -213,91 +230,60 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The workshop environment can be accessed at <a href="https://ferryland.posit.team/" class="uri">https://ferryland.posit.team/</a></p>
+<p>In this workflow, you will:</p>
+<ol type="1">
+<li>Open a Quarto document in R/RStudio.</li>
+<li><strong>Extract</strong> the <code>gapminder</code> dataset from a DuckDB.</li>
+<li><strong>Transform</strong> the data.</li>
+<li><strong>Load</strong> the data to Posit Connect as a pin.</li>
+<li>Publish the Quarto document to Posit Connect and schedule it to run.</li>
+</ol>
+<section id="workflow-steps" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="workflow-steps"><span class="header-section-number">7.1</span> Workflow Steps</h2>
+<ol type="1">
+<li>Within RStudio, navigate to the <code>/data</code> directory and click the <code>data.Rproj</code> file to open the RStudio Project.</li>
+<li>Restore the project package environment by running <code>renv::restore()</code> and following the console prompts.</li>
+<li>Open the <code>gapminder_data.qmd</code> and replace “<code>___</code>” with your account/GitHub username.</li>
+<li>Run the document by clicking the green play button in the top right corner of each code chunk.</li>
+<li>Publish the Quarto document to Posit Connect using push-button deployment (explained below).</li>
+<li>Set up job scheduling so the Quarto document runs every day (explained below).</li>
+</ol>
+</section>
+<section id="push-button-deployment" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="push-button-deployment"><span class="header-section-number">7.2</span> Push Button Deployment</h2>
+<p>The simplest method for manually publishing content to Posit Connect is via <strong>push-button deployment</strong>. With the Quarto document open, click the blue icon at the top of the source pane (<img src="images/pbd.png" class="img-fluid">).</p>
+<p>Since we’ll be scheduling this document to run on the Connect server, we need to ensure we <em>Publish with Source Code</em>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/ptd.png" id="ptd" class="img-fluid quarto-figure quarto-figure-center anchored figure-img"></p>
+<p><img src="images/with-source-code.png" id="with-source-code" class="img-fluid quarto-figure quarto-figure-center anchored figure-img"></p>
 </figure>
 </div>
-<section id="create-a-github-account" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="create-a-github-account"><span class="header-section-number">1.1</span> Create a GitHub Account</h2>
-<p>In order to access the workshop environment, you will need to have a GitHub account. Please create an account <a href="https://github.com/">here</a>.</p>
-<div class="callout callout-style-default callout-important callout-titled">
+<p>Complete the publishing process by following the window prompts.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important
+Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Please ensure you add your name to your GitHub account!</strong> Navigate to your GitHub account page and click <code>Edit profile</code> under your avatar/profile picture.</p>
-</div>
-</div>
-</section>
-<section id="access-posit-connect" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="access-posit-connect"><span class="header-section-number">1.2</span> Access Posit Connect</h2>
-<p>Follow the steps below to access <a href="https://pub.ferryland.posit.team/">Posit Connect</a>.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Step 1: Log In</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Step 2: Keycloak</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Step 3: Allow Access</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Navigate to <a href="https://pub.ferryland.posit.team/">Posit Connect</a> and click <strong>Log In</strong> in the top right corner.</p>
+<p>During the workshop, the initial deployment is likely to fail - that’s OK! The DuckDB present on the Posit Workbench server/image does not exist in the default Posit Connect server/image. To rectify this, you’ll need to select the <code>DSA Workshop</code> environment from the <strong>Runtime –&gt; Execution Environment</strong> option.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/PCT-login.png" class="img-fluid figure-img" width="570"></p>
-<figcaption>Posit Connect - Log In Screen</figcaption>
+<p><img src="images/execution-environment.png" id="execution-environment" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" width="468"></p>
 </figure>
-</div>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>You will be met with an authentication request using a tool called Keycloak. To start, click the small GitHub icon at the bottom of the window.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/keycloak.png" id="keycloak" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" width="271"></p>
-</figure>
-</div>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p>Next, you will be prompted to allow the workshop environment to access your GitHub account. Click the green button to allow access.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/authorize-github.png" id="authorize-github" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" width="428"></p>
-</figure>
-</div>
-<p>You should now have access to Posit Connect!</p>
 </div>
 </div>
 </div>
 </section>
-<section id="access-posit-workbench" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="access-posit-workbench"><span class="header-section-number">1.3</span> Access Posit Workbench</h2>
-<p>You only have to give the workshop environment access to your GitHub account once, so logging into Posit Workbench is very simple! Navigate to <a href="https://dev.ferryland.posit.team/">Posit Workbench</a> and click <strong>Sign in with OpenID.</strong></p>
+<section id="scheduling-on-posit-connect" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="scheduling-on-posit-connect"><span class="header-section-number">7.3</span> Scheduling on Posit Connect</h2>
+<p>You can schedule static content on Posit Connect (such as Quarto, R Markdown, and Jupyter Notebooks) to run at specified time intervals. Once published, navigate to the schedule tab and select your start date/time and your preferred frequency.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/openid.png" id="openid" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" width="608"></p>
-</figure>
-</div>
-<p>You should now have access to Posit Workbench! The homescreen for Posit Workbench should look like the image below. Please note your name in the top right corner.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/pwb-homescreen.png" id="pwb-homescreen" class="img-fluid quarto-figure quarto-figure-center anchored figure-img"></p>
-</figure>
-</div>
-</section>
-<section id="troubleshooting" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="troubleshooting"><span class="header-section-number">1.4</span> Troubleshooting</h2>
-<p>If you have any issues logging into Posit Connect or Posit Workbench, please validate your identity on the <a href="https://ferryland.posit.team/">workshop environment</a> by clicking the <strong>Identity Provider</strong> tile at the bottom.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/identity-provider-tile.png" id="identity-provider-tile" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" width="289"></p>
-</figure>
-</div>
-<p>Ensure that all of the information is correct and that your First and Last Name text boxes are filled in!</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/identity-provider.png" id="identity-provider" class="img-fluid quarto-figure quarto-figure-center anchored figure-img"></p>
+<p><img src="images/schedule.png" id="job-scheduling" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" width="272"></p>
 </figure>
 </div>
 
@@ -716,14 +702,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Welcome to Posit Team User Training!">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome to Posit Team User Training!</span>
+      <a href="./rproj-restore.html" class="pagination-link" aria-label="Restoring an R Project">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Restoring an R Project</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./download-project.html" class="pagination-link" aria-label="Download Project">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Download Project</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

@@ -22,6 +22,9 @@ book:
         - api-keys.qmd
         - verify-publishing.qmd
     - part: Data
+      chapters: 
+        - rproj-restore.qmd
+        - etl.qmd
     - part: Understand
     - part: Communicate
     - part: Bonus Content

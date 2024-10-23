@@ -1,0 +1,40 @@
+# Exercise: Extract, Transform, Load (ETL)
+
+In this workflow, you will:
+
+1.  Open a Quarto document in R/RStudio.
+2.  **Extract** the `gapminder` dataset from a DuckDB.
+3.  **Transform** the data.
+4.  **Load** the data to Posit Connect as a pin.
+5.  Publish the Quarto document to Posit Connect and schedule it to run.
+
+## Workflow Steps
+
+1.  Within RStudio, navigate to the `/data` directory and click the `data.Rproj` file to open the RStudio Project.
+2.  Restore the project package environment by running `renv::restore()` and following the console prompts.
+3.  Open the `gapminder_data.qmd` and replace "`___`" with your account/GitHub username.
+4.  Run the document by clicking the green play button in the top right corner of each code chunk.
+5.  Publish the Quarto document to Posit Connect using push-button deployment (explained below).
+6.  Set up job scheduling so the Quarto document runs every day (explained below).
+
+## Push Button Deployment
+
+The simplest method for manually publishing content to Posit Connect is via **push-button deployment**. With the Quarto document open, click the blue icon at the top of the source pane (![](images/pbd.png)).
+
+Since we'll be scheduling this document to run on the Connect server, we need to ensure we *Publish with Source Code*.
+
+![](images/with-source-code.png){#with-source-code fig-align="center"}
+
+Complete the publishing process by following the window prompts.
+
+::: callout-warning
+During the workshop, the initial deployment is likely to fail - that's OK! The DuckDB present on the Posit Workbench server/image does not exist in the default Posit Connect server/image. To rectify this, you'll need to select the `DSA Workshop` environment from the **Runtime –\> Execution Environment** option.
+
+![](images/execution-environment.png){#execution-environment fig-align="center" width="468"}
+:::
+
+## Scheduling on Posit Connect
+
+You can schedule static content on Posit Connect (such as Quarto, R Markdown, and Jupyter Notebooks) to run at specified time intervals. Once published, navigate to the schedule tab and select your start date/time and your preferred frequency.
+
+![](images/schedule.png){#job-scheduling fig-align="center" width="272"}

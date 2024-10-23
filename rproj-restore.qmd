@@ -1,0 +1,34 @@
+# Restoring an R Project
+
+When someone shares a project with you, it's important that you know how to restore it to it's appropriate state that ensure all of the code runs as intended. In this lesson, we'll demonstrate how to restore an R project using **RStudio Projects** and the `renv` package.
+
+## RStudio Projects and `.Rproj`
+
+In this workshop, our R workflows live within **RStudio Projects**. An RStudio Project is a way to organize all the files, code, data, and settings for a specific analysis or project in RStudio. It helps keep everything related to that project in one place, making it easier to manage.
+
+The **`.Rproj`** fileis a small file that stores the settings for that specific project and resides within the home directory of your RStudio Project. When you open it, it tells RStudio to open the project with the correct working directory and any custom settings you've set for that project.
+
+## The `renv` package
+
+The [`renv`](https://rstudio.github.io/renv/) R package manages and isolates R packages for each RStudio project, creating a separate "library" for each project. This makes it easier to share, collaborate, and rerun projects across different systems without worrying about package conflicts or version mismatches. The `renv.lock` file stores the exact package versions used in a project, ensuring that the environment can be reliably reproduced, maintaining consistency and avoiding issues from package updates.
+
+## How to restore an RStudio Project
+
+Once an RStudio Project has been shared with you, you'll want to restore the package environment to ensure all of the code runs as intended.
+
+First, ensure you are within the RStudio Project by clicking the `.Rproj` file. Once opened, `renv` should automatically be initialized. If not, we'd recommend running `renv::status()` to get a better sense of your project's current state.
+
+In most cases, to restore a project's package environment (as defined in the `renv.lock` file), you only need to run `renv::restore()` and follow the console prompts. Below is the code summary for restoring an RStudio project:
+
+``` r
+# Ensure you have clicked the .Rproj file
+
+# Check renv status
+renv::status()
+
+# If project is not initialized with renv, then run the following
+renv::init()
+
+# Restore projects package environment
+renv::restore()
+```

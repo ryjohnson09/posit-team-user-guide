@@ -562,7 +562,7 @@
     "href": "api-keys.html#add-api-key-to-your-r-environment",
     "title": "4  API Keys",
     "section": "4.2 Add API Key to your R Environment",
-    "text": "4.2 Add API Key to your R Environment\n\n4.2.1 Install and load the usethis R Package\nWithin RStudio, run the following commands in the console:\n# Install the usethis package\ninstall.packages(\"usethis\")\n\n# Load the usethis package\nlibrary(usethis)\n\n\n4.2.2 Open the .Renviron file\nThe .Renviron file is a special file in R that executes its contents each time R starts. It’s the recommended location for storing sensitive information, such as API keys. To open your .Renviron file, run the following code:\n# Open/Create your .Renviron file\nusethis::edit_r_environ()\n\n\n4.2.3 Add your Posit Connect API Key\nAdd your API key to the .Renviron file:\nCONNECT_API_KEY=api-key-goes-here\n\n\n\n\n\n\nTip\n\n\n\nSome files, like .Renviron and other configuration or script files, often include an empty line at the bottom due to convention and practical reasons related to how these files are read and processed by different programs or text editors.\n\n\n\n\n4.2.4 Restart your R session\nWe need to restart R in order for the .Renviron file to be sourced. You can do this by clicking Session at the top of the RStudio IDE and select Restart R. You can verify if your API key has been set by running the following code in your R console:\nSys.getenv(\"CONNECT_API_KEY\")\nYou should see the API key printed to the console.",
+    "text": "4.2 Add API Key to your R Environment\n\n4.2.1 Install and load the usethis R Package\nWithin RStudio, run the following commands in the console:\n# Install the usethis package\ninstall.packages(\"usethis\")\n\n# Load the usethis package\nlibrary(usethis)\n\n\n4.2.2 Open the .Renviron file\nThe .Renviron file is a special file in R that executes its contents each time R starts. It’s the recommended location for storing sensitive information, such as API keys. To open your .Renviron file, run the following code:\n# Open/Create your .Renviron file\nusethis::edit_r_environ()\n\n\n4.2.3 Add your Posit Connect API Key\nAdd your API key to the .Renviron file:\nCONNECT_API_KEY=api-key-goes-here\n \n\n\n\n\n\n\nTip\n\n\n\nSome files, like .Renviron and other configuration or script files, often include an empty line at the bottom due to convention and practical reasons related to how these files are read and processed by different programs or text editors.\n\n\n\n\n4.2.4 Restart your R session\nWe need to restart R in order for the .Renviron file to be sourced. You can do this by clicking Session at the top of the RStudio IDE and select Restart R. You can verify if your API key has been set by running the following code in your R console:\nSys.getenv(\"CONNECT_API_KEY\")\nYou should see the API key printed to the console.",
     "crumbs": [
       "Overview and Setup",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>API Keys</span>"
@@ -573,7 +573,7 @@
     "href": "api-keys.html#add-api-key-to-your-python-environment",
     "title": "4  API Keys",
     "section": "4.3 Add API Key to your Python Environment",
-    "text": "4.3 Add API Key to your Python Environment\nThere are several ways to add environment variables to your Python environment. In this workshop, we will add them to the .bashrc file, which makes the variables available in your terminal/bash environment. After that, we can use Python’s os module to access these environment variables.\n\n4.3.1 Open your .bashrc file\nUsing VS Code, open your .bashrc file by clicking the three-line button in the top left corner and selecting File –&gt; Open File.... This will open your command palette. Type out the location of your .bashrc file as follows, making sure to replace &lt;username&gt; with your username:\n/home/username/.bashrc\n\n\n4.3.2 Add your API key to the .bashrc file\nScroll to the bottom of the .bashrc file and add the following code, making sure to replace &lt;api-key-goes-here&gt; with your API key:\nCONNECT_API_KEY='api-key-goes-here'\nAgain, make sure to add an empty line at the end.\n\n\n4.3.3 Restart your VS Code session\nIn most cases, you can simply restart your teminal to pick ensure the .bashrc file is sourced. But to be 100%, we can restart our entire VS Code session. Navigate back to the Posit Workbench home page and close the VS Code session and create a new one. Once back in VS Code, you can verify if your API key has been set by running the following code in your terminal:\necho $CONNECT_API_KEY\nYou should see the API key printed to the terminal.",
+    "text": "4.3 Add API Key to your Python Environment\nThere are several ways to add environment variables to your Python environment. In this workshop, we will add them to the .bashrc file, which makes the variables available in your terminal/bash environment. After that, we can use Python’s os module to access these environment variables.\n\n4.3.1 Open your .bashrc file\nUsing VS Code, open your .bashrc file by clicking the three-line button in the top left corner and selecting File –&gt; Open File.... This will open your command palette. Type out the location of your .bashrc file as follows, making sure to replace &lt;username&gt; with your username:\n/home/username/.bashrc\n\n\n4.3.2 Add your API key to the .bashrc file\nScroll to the bottom of the .bashrc file and add the following code, making sure to replace &lt;api-key-goes-here&gt; with your API key:\nCONNECT_API_KEY='api-key-goes-here'\n \nAgain, make sure to add an empty line at the end.\n\n\n4.3.3 Restart your VS Code session\nIn most cases, you can simply restart your teminal to pick ensure the .bashrc file is sourced. But to be 100%, we can restart our entire VS Code session. Navigate back to the Posit Workbench home page and close the VS Code session and create a new one. Once back in VS Code, you can verify if your API key has been set by running the following code in your terminal:\necho $CONNECT_API_KEY\nYou should see the API key printed to the terminal.",
     "crumbs": [
       "Overview and Setup",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>API Keys</span>"
@@ -595,10 +595,131 @@
     "href": "verify-publishing.html#publishing-from-terminal",
     "title": "5  Verify Publishing Status",
     "section": "5.2 Publishing from Terminal",
-    "text": "5.2 Publishing from Terminal\nFor Jupyter and VS Code, you’ll often leverage the terminal/command line for publshing content to Posit Connect. After ensuring you have the rsconnect-python package installed (pip install rsconnect-python), you can check if you have any Posit Connect instances currently configure by running the following command in the terminal:\nrsconnect list\nIf nothing is returned, then you can add a new Posit Connect server by running the following command in the terminal, making sure to replace https://my.connect.serv with your Posit Connect server URL. You can also change the name myServer to whatever you like:\nrsconnect add \\\n    --server https://my.connect.server/ \\\n    --name myServer \\\n    --api-key $CONNECT_API_KEY",
+    "text": "5.2 Publishing from Terminal\nFor Jupyter and VS Code, you’ll often leverage the terminal/command line for publshing content to Posit Connect. After ensuring you have the rsconnect-python package installed (pip install rsconnect-python), you can check if you have any Posit Connect instances currently configure by running the following command in the terminal:\nrsconnect list\nIf nothing is returned, then you can add a new Posit Connect server by running the following command in the terminal, making sure to replace https://my.connect.server with your Posit Connect server URL. You can also change the name myServer to whatever you like:\nrsconnect add \\\n    --server https://my.connect.server/ \\\n    --name myServer \\\n    --api-key $CONNECT_API_KEY",
     "crumbs": [
       "Overview and Setup",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Verify Publishing Status</span>"
+    ]
+  },
+  {
+    "objectID": "configure-repos.html",
+    "href": "configure-repos.html",
+    "title": "3  Configure Repositories",
+    "section": "",
+    "text": "3.1 R Repositories\nTo view the repositories from which R installs packages, you can run the following command:\nR uses these repositories to search for and download packages when you run functions like install.packages() . Usually a CRAN (Comprehensive R Archive Network) mirror is set as default, but you can also configure custom repositories using the same function:\nThe command above will configure your default R repository to CRAN within Posit Package Manager (https://pkg.ferryland.posit.team). It will also ensure that you install pre-built R package binaries for Linux (__linux__/jammy) and access the latest available versions of those packages (latest).\nTo maintain this configuration across R sessions, paste the above function into your R startup file (Rprofile.site or .Rprofile).",
+    "crumbs": [
+      "Overview and Setup",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Configure Repositories</span>"
+    ]
+  },
+  {
+    "objectID": "configure-repos.html#r-repositories",
+    "href": "configure-repos.html#r-repositories",
+    "title": "3  Configure Repositories",
+    "section": "",
+    "text": "options(\"repos\")\n\noptions(repos = c(CRAN = \"https://pkg.ferryland.posit.team/cran/__linux__/jammy/latest\"))",
+    "crumbs": [
+      "Overview and Setup",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Configure Repositories</span>"
+    ]
+  },
+  {
+    "objectID": "configure-repos.html#python-repositories",
+    "href": "configure-repos.html#python-repositories",
+    "title": "3  Configure Repositories",
+    "section": "3.2 Python Repositories",
+    "text": "3.2 Python Repositories\nPython packages are installed outside of Python using the command line interface (CLI) tool called pip. By default, pip will reach out to the Python Package Index repository, or PyPI, when new packages are installed. For example, if you run the following command:\npip install shiny\nThis will install the shiny python package from PyPI, specially from the default PyPI URL (https://pypi.org/simple). If you would like to modify this URL to point to an instace of PyPI within Posit Package Manager, you can use the following command:\npip config set global.index-url https://pkg.ferryland.posit.team/pypi/latest/simple\nThe command modifies the configuration of pip to change the default package index URL (global.index-url) to an instance of PyPI on Posit Package Manager (https://pkg.ferryland.posit.team). It also configures pip to access the latest available versions of those packages (latest).\nYou can check the updated package index URL by running the following command:\npip config list",
+    "crumbs": [
+      "Overview and Setup",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Configure Repositories</span>"
+    ]
+  },
+  {
+    "objectID": "rproj-restore.html",
+    "href": "rproj-restore.html",
+    "title": "6  Restoring an R Project",
+    "section": "",
+    "text": "6.1 RStudio Projects and .Rproj\nIn this workshop, our R workflows live within RStudio Projects. An RStudio Project is a way to organize all the files, code, data, and settings for a specific analysis or project in RStudio. It helps keep everything related to that project in one place, making it easier to manage.\nThe .Rproj fileis a small file that stores the settings for that specific project and resides within the home directory of your RStudio Project. When you open it, it tells RStudio to open the project with the correct working directory and any custom settings you’ve set for that project.",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Restoring an R Project</span>"
+    ]
+  },
+  {
+    "objectID": "rproj-restore.html#the-renv-package",
+    "href": "rproj-restore.html#the-renv-package",
+    "title": "6  Restoring an R Project",
+    "section": "6.2 The renv package",
+    "text": "6.2 The renv package\nThe renv R package manages and isolates R packages for each RStudio project, creating a separate “library” for each project. This makes it easier to share, collaborate, and rerun projects across different systems without worrying about package conflicts or version mismatches. The renv.lock file stores the exact package versions used in a project, ensuring that the environment can be reliably reproduced, maintaining consistency and avoiding issues from package updates.",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Restoring an R Project</span>"
+    ]
+  },
+  {
+    "objectID": "rproj-restore.html#how-to-restore-an-rstudio-project",
+    "href": "rproj-restore.html#how-to-restore-an-rstudio-project",
+    "title": "6  Restoring an R Project",
+    "section": "6.3 How to restore an RStudio Project",
+    "text": "6.3 How to restore an RStudio Project\nOnce an RStudio Project has been shared with you, you’ll want to restore the package environment to ensure all of the code runs as intended.\nFirst, ensure you are within the RStudio Project by clicking the .Rproj file. Once opened, renv should automatically be initialized. If not, we’d recommend running renv::status() to get a better sense of your project’s current state.\nIn most cases, to restore a project’s package environment (as defined in the renv.lock file), you only need to run renv::restore() and follow the console prompts. Below is the code summary for restoring an RStudio project:\n# Ensure you have clicked the .Rproj file\n\n# Check renv status\nrenv::status()\n\n# If project is not initialized with renv, then run the following\nrenv::init()\n\n# Restore projects package environment\nrenv::restore()",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Restoring an R Project</span>"
+    ]
+  },
+  {
+    "objectID": "etl.html",
+    "href": "etl.html",
+    "title": "7  Exercise: Extract, Transform, Load (ETL)",
+    "section": "",
+    "text": "7.1 Workflow Steps",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Exercise: Extract, Transform, Load (ETL)</span>"
+    ]
+  },
+  {
+    "objectID": "etl.html#workflow",
+    "href": "etl.html#workflow",
+    "title": "7  Exercise: Extract, Transform, Load (ETL)",
+    "section": "",
+    "text": "Navigate to the /data directory and click the data.Rproj file to open the RStudio Project.",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Exercise: Extract, Transform, Load (ETL)</span>"
+    ]
+  },
+  {
+    "objectID": "etl.html#workflow-steps",
+    "href": "etl.html#workflow-steps",
+    "title": "7  Exercise: Extract, Transform, Load (ETL)",
+    "section": "",
+    "text": "Within RStudio, navigate to the /data directory and click the data.Rproj file to open the RStudio Project.\nRestore the project package environment by running renv::restore() and following the console prompts.\nOpen the gapminder_data.qmd and replace “___” with your account/GitHub username.\nRun the document by clicking the green play button in the top right corner of each code chunk.\nPublish the Quarto document to Posit Connect using push-button deployment (explained below).\nSet up job scheduling so the Quarto document runs every day (explained below).",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Exercise: Extract, Transform, Load (ETL)</span>"
+    ]
+  },
+  {
+    "objectID": "etl.html#push-button-deployment",
+    "href": "etl.html#push-button-deployment",
+    "title": "7  Exercise: Extract, Transform, Load (ETL)",
+    "section": "7.2 Push Button Deployment",
+    "text": "7.2 Push Button Deployment\nThe simplest method for manually publishing content to Posit Connect is via push-button deployment. With the Quarto document open, click the blue icon at the top of the source pane ().\nSince we’ll be scheduling this document to run on the Connect server, we need to ensure we Publish with Source Code.\n\n\n\n\n\nComplete the publishing process by following the window prompts.\n\n\n\n\n\n\nWarning\n\n\n\nDuring the workshop, the initial deployment is likely to fail - that’s OK! The DuckDB present on the Posit Workbench server/image does not exist in the default Posit Connect server/image. To rectify this, you’ll need to select the DSA Workshop environment from the Runtime –&gt; Execution Environment option.",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Exercise: Extract, Transform, Load (ETL)</span>"
+    ]
+  },
+  {
+    "objectID": "etl.html#scheduling-on-posit-connect",
+    "href": "etl.html#scheduling-on-posit-connect",
+    "title": "7  Exercise: Extract, Transform, Load (ETL)",
+    "section": "7.3 Scheduling on Posit Connect",
+    "text": "7.3 Scheduling on Posit Connect\nYou can schedule static content on Posit Connect (such as Quarto, R Markdown, and Jupyter Notebooks) to run at specified time intervals. Once published, navigate to the schedule tab and select your start date/time and your preferred frequency.",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Exercise: Extract, Transform, Load (ETL)</span>"
     ]
   }
 ]
